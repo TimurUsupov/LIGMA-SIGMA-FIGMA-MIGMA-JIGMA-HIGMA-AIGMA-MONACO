@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Super Enhanced CattyX Executor Pro Max Ultra</title>
+  <style>
+    /* Определение CSS-переменных для тем */
+    :root {
+      /* Тема Purple (основная) */
+      --body-bg: linear-gradient(145deg, #0d0d0d, #2a0033, #1e0033, #000000);
+      --tabs-bg: linear-gradient(to right, #330066, #1e0033);
+      --tabs-border: #5e00a5;
+      --tab-bg: linear-gradient(to bottom, #2e004e, #1a001f);
+      --tab-active-bg: linear-gradient(to bottom, #5c00a5, #30004f);
+      --tab-border: #5e00a5;
+      --tab-text: #ccc;
+      --tab-active-text: white;
+      --add-tab-bg: linear-gradient(to right, #4b0082, #8000ff);
+      --add-tab-hover-bg: linear-gradient(to right, #6a00ff, #9c33ff);
+      --editor-bg: linear-gradient(135deg, #1a001f, #1e0033);
+      --panel-bg: #2e004e;
+      --panel-border: #5e00a5;
+      --panel-button-bg: #4b0082;
+      --panel-button-hover-bg: #6a00ff;
+      --panel-input-bg: #1a001f;
+    }
+
+    /* Тема Blue */
+    [data-theme="blue"] {
+      --body-bg: linear-gradient(145deg, #0a1c2b, #1e3a8a, #1e40af, #0d1117);
+      --tabs-bg: linear-gradient(to right, #1e40af, #1e3a8a);
+      --tabs-border: #3b82f6;
+      --tab-bg: linear-gradient(to bottom, #1e3a8a, #0a1c2b);
+      --tab-active-bg: linear-gradient(to bottom, #3b82f6, #1e40af);
+      --tab-border: #3b82f6;
+      --tab-text: #bfdbfe;
+      --tab-active-text: white;
+      --add-tab-bg: linear-gradient(to right, #1d4ed8, #3b82f6);
+      --add-tab-hover-bg: linear-gradient(to right, #2563eb, #60a5fa);
+      --editor-bg: linear-gradient(135deg, #0a1c2b, #1e3a8a);
+      --panel-bg: #1e3a8a;
+      --panel-border: #3b82f6;
+      --panel-button-bg: #1d4ed8;
+      --panel-button-hover-bg: #2563eb;
+      --panel-input-bg: #0a1c2b;
+    }
+
+    /* Тема Red */
+    [data-theme="red"] {
+      --body-bg: linear-gradient(145deg, #2d0000, #7f1d1d, #991b1b, #1a0000);
+      --tabs-bg: linear-gradient(to right, #991b1b, #7f1d1d);
+      --tabs-border: #ef4444;
+      --tab-bg: linear-gradient(to bottom, #7f1d1d, #2d0000);
+      --tab-active-bg: linear-gradient(to bottom, #ef4444, #991b1b);
+      --tab-border: #ef4444;
+      --tab-text: #fecaca;
+      --tab-active-text: white;
+      --add-tab-bg: linear-gradient(to right, #b91c1c, #ef4444);
+      --add-tab-hover-bg: linear-gradient(to right, #dc2626, #f87171);
+      --editor-bg: linear-gradient(135deg, #2d0000, #7f1d1d);
+      --panel-bg: #7f1d1d;
+      --panel-border: #ef4444;
+      --panel-button-bg: #b91c1c;
+      --panel-button-hover-bg: #dc2626;
+      --panel-input-bg: #2d0000;
+    }
+
+    /* Тема Green */
+    [data-theme="green"] {
+      --body-bg: linear-gradient(145deg, #022c22, #166534, #15803d, #052e16);
+      --tabs-bg: linear-gradient(to right, #15803d, #166534);
+      --tabs-border: #22c55e;
+      --tab-bg: linear-gradient(to bottom, #166534, #022c22);
+      --tab-active-bg: linear-gradient(to bottom, #22c55e, #15803d);
+      --tab-border: #22c55e;
+      --tab-text: #bbf7d0;
+      --tab-active-text: white;
+      --add-tab-bg: linear-gradient(to right, #15803d, #22c55e);
+      --add-tab-hover-bg: linear-gradient(to right, #16a34a, #4ade80);
+      --editor-bg: linear-gradient(135deg, #022c22, #166534);
+      --panel-bg: #166534;
+      --panel-border: #22c55e;
+      --panel-button-bg: #15803d;
+      --panel-button-hover-bg: #16a34a;
+      --panel-input-bg: #022c22;
+    }
+
+    /* Тема Cyberpunk */
+    [data-theme="cyberpunk"] {
+      --body-bg: linear-gradient(145deg, #1a0f26, #6b21a8, #7c3aed, #0f172a);
+      --tabs-bg: linear-gradient(to right, #7c3aed, #6b21a8);
+      --tabs-border: #a855f7;
+      --tab-bg: linear-gradient(to bottom, #6b21a8, #1a0f26);
+      --tab-active-bg: linear-gradient(to bottom, #a855f7, #7c3aed);
+      --tab-border: #a855f7;
+      --tab-text: #e9d5ff;
+      --tab-active-text: white;
+      --add-tab-bg: linear-gradient(to right, #7c3aed, #a855f7);
+      --add-tab-hover-bg: linear-gradient(to right, #9333ea, #c084fc);
+      --editor-bg: linear-gradient(135deg, #1a0f26, #6b21a8);
+      --panel-bg: #6b21a8;
+      --panel-border: #a855f7;
+      --panel-button-bg: #7c3aed;
+      --panel-button-hover-bg: #9333ea;
+      --panel-input-bg: #1a0f26;
+    }
+
+    /* Тема Pastel */
+    [data-theme="pastel"] {
+      --body-bg: linear-gradient(145deg, #fef3c7, #fce7f3, #e9d5ff, #ccfbf1);
+      --tabs-bg: linear-gradient(to right, #e9d5ff, #fce7f3);
+      --tabs-border: #a5b4fc;
+      --tab-bg: linear-gradient(to bottom, #fce7f3, #fef3c7);
+      --tab-active-bg: linear-gradient(to bottom, #a5b4fc, #e9d5ff);
+      --tab-border: #a5b4fc;
+      --tab-text: #4b5563;
+      --tab-active-text: #1f2937;
+      --add-tab-bg: linear-gradient(to right, #e9d5ff, #a5b4fc);
+      --add-tab-hover-bg: linear-gradient(to right, #c7d2fe, #818cf8);
+      --editor-bg: linear-gradient(135deg, #fef3c7, #fce7f3);
+      --panel-bg: #fce7f3;
+      --panel-border: #a5b4fc;
+      --panel-button-bg: #e9d5ff;
+      --panel-button-hover-bg: #c7d2fe;
+      --panel-input-bg: #fef3c7;
+    }
+
+    /* Тема Dark */
+    [data-theme="dark"] {
+      --body-bg: linear-gradient(145deg, #111827, #1f2937, #374151, #0f172a);
+      --tabs-bg: linear-gradient(to right, #374151, #1f2937);
+      --tabs-border: #4b5563;
+      --tab-bg: linear-gradient(to bottom, #1f2937, #111827);
+      --tab-active-bg: linear-gradient(to bottom, #4b5563, #374151);
+      --tab-border: #4b5563;
+      --tab-text: #d1d5db;
+      --tab-active-text: white;
+      --add-tab-bg: linear-gradient(to right, #374151, #4b5563);
+      --add-tab-hover-bg: linear-gradient(to right, #4b5563, #6b7280);
+      --editor-bg: linear-gradient(135deg, #111827, #1f2937);
+      --panel-bg: #1f2937;
+      --panel-border: #4b5563;
+      --panel-button-bg: #374151;
+      --panel-button-hover-bg: #4b5563;
+      --panel-input-bg: #111827;
+    }
+
+    /* Тема Light */
+    [data-theme="light"] {
+      --body-bg: linear-gradient(145deg, #f3f4f6, #e5e7eb, #d1d5db, #f9fafb);
+      --tabs-bg: linear-gradient(to right, #d1d5db, #e5e7eb);
+      --tabs-border: #9ca3af;
+      --tab-bg: linear-gradient(to bottom, #e5e7eb, #f3f4f6);
+      --tab-active-bg: linear-gradient(to bottom, #9ca3af, #d1d5db);
+      --tab-border: #9ca3af;
+      --tab-text: #374151;
+      --tab-active-text: #111827;
+      --add-tab-bg: linear-gradient(to right, #d1d5db, #9ca3af);
+      --add-tab-hover-bg: linear-gradient(to right, #9ca3af, #6b7280);
+      --editor-bg: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+      --panel-bg: #e5e7eb;
+      --panel-border: #9ca3af;
+      --panel-button-bg: #d1d5db;
+      --panel-button-hover-bg: #9ca3af;
+      --panel-input-bg: #f3f4f6;
+    }
+
+    /* Тема Neon */
+    [data-theme="neon"] {
+      --body-bg: linear-gradient(145deg, #0f172a, #db2777, #8b5cf6, #0f172a);
+      --tabs-bg: linear-gradient(to right, #8b5cf6, #db2777);
+      --tabs-border: #ec4899;
+      --tab-bg: linear-gradient(to bottom, #db2777, #0f172a);
+      --tab-active-bg: linear-gradient(to bottom, #ec4899, #8b5cf6);
+      --tab-border: #ec4899;
+      --tab-text: #f9a8d4;
+      --tab-active-text: white;
+      --add-tab-bg: linear-gradient(to right, #8b5cf6, #ec4899);
+      --add-tab-hover-bg: linear-gradient(to right, #a855f7, #f472b6);
+      --editor-bg: linear-gradient(135deg, #0f172a, #db2777);
+      --panel-bg: #db2777;
+      --panel-border: #ec4899;
+      --panel-button-bg: #8b5cf6;
+      --panel-button-hover-bg: #a855f7;
+      --panel-input-bg: #0f172a;
+    }
+
+    /* Тема Sunset */
+    [data-theme="sunset"] {
+      --body-bg: linear-gradient(145deg, #7c2d12, #ea580c, #f97316, #431407);
+      --tabs-bg: linear-gradient(to right, #f97316, #ea580c);
+      --tabs-border: #fb923c;
+      --tab-bg: linear-gradient(to bottom, #ea580c, #7c2d12);
+      --tab-active-bg: linear-gradient(to bottom, #fb923c, #f97316);
+      --tab-border: #fb923c;
+      --tab-text: #fed7aa;
+      --tab-active-text: white;
+      --add-tab-bg: linear-gradient(to right, #ea580c, #fb923c);
+      --add-tab-hover-bg: linear-gradient(to right, #f97316, #fdba74);
+      --editor-bg: linear-gradient(135deg, #7c2d12, #ea580c);
+      --panel-bg: #ea580c;
+      --panel-border: #fb923c;
+      --panel-button-bg: #ea580c;
+      --panel-button-hover-bg: #f97316;
+      --panel-input-bg: #7c2d12;
+    }
+
+    /* Тема Ocean */
+    [data-theme="ocean"] {
+      --body-bg: linear-gradient(145deg, #083344, #164e63, #155e75, #042f2e);
+      --tabs-bg: linear-gradient(to right, #155e75, #164e63);
+      --tabs-border: #3b82f6;
+      --tab-bg: linear-gradient(to bottom, #164e63, #083344);
+      --tab-active-bg: linear-gradient(to bottom, #3b82f6, #155e75);
+      --tab-border: #3b82f6;
+      --tab-text: #bfdbfe;
+      --tab-active-text: white;
+      --add-tab-bg: linear-gradient(to right, #164e63, #3b82f6);
+      --add-tab-hover-bg: linear-gradient(to right, #1d4ed8, #60a5fa);
+      --editor-bg: linear-gradient(135deg, #083344, #164e63);
+      --panel-bg: #164e63;
+      --panel-border: #3b82f6;
+      --panel-button-bg: #164e63;
+      --panel-button-hover-bg: #1d4ed8;
+      --panel-input-bg: #083344;
+    }
+
+    /* Тема Forest */
+    [data-theme="forest"] {
+      --body-bg: linear-gradient(145deg, #052e16, #14532d, #166534, #022c22);
+      --tabs-bg: linear-gradient(to right, #166534, #14532d);
+      --tabs-border: #22c55e;
+      --tab-bg: linear-gradient(to bottom, #14532d, #052e16);
+      --tab-active-bg: linear-gradient(to bottom, #22c55e, #166534);
+      --tab-border: #22c55e;
+      --tab-text: #bbf7d0;
+      --tab-active-text: white;
+      --add-tab-bg: linear-gradient(to right, #14532d, #22c55e);
+      --add-tab-hover-bg: linear-gradient(to right, #16a34a, #4ade80);
+      --editor-bg: linear-gradient(135deg, #052e16, #14532d);
+      --panel-bg: #14532d;
+      --panel-border: #22c55e;
+      --panel-button-bg: #14532d;
+      --panel-button-hover-bg: #16a34a;
+      --panel-input-bg: #052e16;
+    }
+
+    /* Основные стили для тела страницы */
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--body-bg);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      color: white;
+      overflow: hidden;
+    }
+
+    /* Анимация градиента для фона */
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Стили для панели вкладок */
+    #tabs {
+      display: flex;
+      align-items: center;
+      background: var(--tabs-bg);
+      padding: 4px 8px;
+      border-bottom: 2px solid var(--tabs-border);
+      z-index: 10;
+      position: relative;
+    }
+
+    /* Стили для отдельных вкладок */
+    .tab {
+      background: var(--tab-bg);
+      color: var(--tab-text);
+      border: 1px solid var(--tab-border);
+      border-radius: 8px 8px 0 0;
+      padding: 6px 12px;
+      margin-right: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      opacity: 0.8;
+    }
+
+    /* Стили для активной вкладки */
+    .tab.active {
+      background: var(--tab-active-bg);
+      color: var(--tab-active-text);
+      border-bottom: none;
+      opacity: 1;
+    }
+
+    /* Стили для заголовка вкладки */
+    .tab .title {
+      user-select: none;
+      max-width: 150px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Стили для кнопки закрытия вкладки */
+    .tab .close {
+      margin-left: 8px;
+      color: var(--tab-text);
+      cursor: pointer;
+      font-weight: bold;
+      transition: color 0.2s ease;
+    }
+
+    .tab .close:hover {
+      color: var(--tab-active-text);
+    }
+
+    /* Поле ввода для переименования вкладки */
+    .tab input {
+      background: transparent;
+      border: none;
+      color: var(--tab-active-text);
+      outline: none;
+      font: inherit;
+      width: 100px;
+      padding: 2px;
+    }
+
+    /* Стили для кнопки добавления вкладки */
+    #addTab {
+      background: var(--add-tab-bg);
+      border: none;
+      color: var(--tab-active-text);
+      font-size: 20px;
+      cursor: pointer;
+      padding: 6px 14px;
+      border-radius: 8px;
+      transition: background 0.2s ease;
+    }
+
+    #addTab:hover {
+      background: var(--add-tab-hover-bg);
+    }
+
+    /* Стили для контейнера редактора */
+    #editor {
+      height: calc(100vh - 40px);
+      width: 100%;
+      background: var(--editor-bg);
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    /* Стили для Monaco Editor */
+    .monaco-editor,
+    .monaco-editor .margin,
+    .monaco-editor-background,
+    .monaco-editor .monaco-scrollable-element {
+      background: var(--editor-bg) !important;
+    }
+
+    .monaco-editor .inputarea {
+      background-color: transparent !important;
+      color: var(--tab-active-text) !important;
+    }
+
+    .monaco-editor .view-lines,
+    .monaco-editor .lines-content {
+      background: transparent !important;
+    }
+
+    /* Анимация появления редактора */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Стили для панели поиска */
+    #searchPanel {
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      background: var(--panel-bg);
+      border: 1px solid var(--panel-border);
+      border-radius: 8px;
+      padding: 10px;
+      display: none;
+      z-index: 20;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #searchPanel input {
+      background: var(--panel-input-bg);
+      border: 1px solid var(--panel-border);
+      color: var(--tab-active-text);
+      padding: 5px;
+      margin-right: 5px;
+      border-radius: 4px;
+    }
+
+    #searchPanel button {
+      background: var(--panel-button-bg);
+      color: var(--tab-active-text);
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #searchPanel button:hover {
+      background: var(--panel-button-hover-bg);
+    }
+
+    /* Стили для панели настроек */
+    #settingsPanel {
+      position: absolute;
+      top: 50px;
+      left: 20px;
+      background: var(--panel-bg);
+      border: 1px solid var(--panel-border);
+      border-radius: 8px;
+      padding: 10px;
+      display: none;
+      z-index: 20;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #settingsPanel select,
+    #settingsPanel input {
+      background: var(--panel-input-bg);
+      border: 1px solid var(--panel-border);
+      color: var(--tab-active-text);
+      padding: 5px;
+      margin: 5px 0;
+      border-radius: 4px;
+      width: 150px;
+    }
+
+    #settingsPanel button {
+      background: var(--panel-button-bg);
+      color: var(--tab-active-text);
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #settingsPanel button:hover {
+      background: var(--panel-button-hover-bg);
+    }
+
+    /* Стили для панели истории изменений */
+    #historyPanel {
+      position: absolute;
+      top: 50px;
+      left: 200px;
+      background: var(--panel-bg);
+      border: 1px solid var(--panel-border);
+      border-radius: 8px;
+      padding: 10px;
+      display: none;
+      z-index: 20;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    #historyPanel ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #historyPanel li {
+      padding: 5px;
+      cursor: pointer;
+      background: var(--panel-input-bg);
+      margin-bottom: 2px;
+      border-radius: 4px;
+      color: var(--tab-active-text);
+    }
+
+    #historyPanel li:hover {
+      background: var(--panel-button-bg);
+    }
+
+    #historyPanel button {
+      background: var(--panel-button-bg);
+      color: var(--tab-active-text);
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #historyPanel button:hover {
+      background: var(--panel-button-hover-bg);
+    }
+
+    /* Стили для кнопки загрузки файла */
+    #fileInput {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Панель вкладок -->
+  <div id="tabs">
+    <button id="addTab">+</button>
+    <button id="openSearch" style="margin-left: 10px; background: var(--panel-button-bg); color: var(--tab-active-text); padding: 6px 12px; border-radius: 8px;">Search</button>
+    <button id="openSettings" style="margin-left: 10px; background: var(--panel-button-bg); color: var(--tab-active-text); padding: 6px 12px; border-radius: 8px;">Settings</button>
+    <button id="openHistory" style="margin-left: 10px; background: var(--panel-button-bg); color: var(--tab-active-text); padding: 6px 12px; border-radius: 8px;">History</button>
+    <label for="fileInput" style="margin-left: 10px; background: var(--panel-button-bg); color: var(--tab-active-text); padding: 6px 12px; border-radius: 8px; cursor: pointer;">Load Script</label>
+    <input type="file" id="fileInput" accept=".lua,.txt" />
+  </div>
+  <!-- Контейнер редактора -->
+  <div id="editor"></div>
+  <!-- Панель поиска -->
+  <div id="searchPanel">
+    <input type="text" id="searchInput" placeholder="Search...">
+    <input type="text" id="replaceInput" placeholder="Replace...">
+    <button id="findNext">Find Next</button>
+    <button id="replace">Replace</button>
+    <button id="replaceAll">Replace All</button>
+    <button id="closeSearch">Close</button>
+  </div>
+  <!-- Панель настроек -->
+  <div id="settingsPanel">
+    <div>
+      <label>Theme:</label>
+      <select id="themeSelect">
+        <option value="purple">Purple</option>
+        <option value="blue">Blue</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="cyberpunk">Cyberpunk</option>
+        <option value="pastel">Pastel</option>
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+        <option value="neon">Neon</option>
+        <option value="sunset">Sunset</option>
+        <option value="ocean">Ocean</option>
+        <option value="forest">Forest</option>
+      </select>
+    </div>
+    <div>
+      <label>Font Size:</label>
+      <input type="number" id="fontSizeInput" value="14" min="8" max="24">
+    </div>
+    <button id="applySettings">Apply</button>
+    <button id="closeSettings">Close</button>
+  </div>
+  <!-- Панель истории изменений -->
+  <div id="historyPanel">
+    <ul id="historyList"></ul>
+    <button id="clearHistory">Clear History</button>
+    <button id="closeHistory">Close</button>
+  </div>
+
+  <!-- Подключение Monaco Editor -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.44.0/min/vs/loader.min.js"></script>
+  <script>
+    // Конфигурация путей для Monaco Editor
+    require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.44.0/min/vs' } });
+    require(['vs/editor/editor.main'], function () {
+      // Списки автодополнения для Roblox API
+      // Классы Roblox
+      const robloxClasses = [
+        'Instance', // Базовый класс всех объектов
+        'Part', // Физический объект в 3D-мире
+        'Model', // Коллекция объектов
+        'Player', // Представляет игрока
+        'Workspace', // Контейнер 3D-мира
+        'Camera', // Управление камерой
+        'Lighting', // Управление освещением
+        'ReplicatedStorage', // Хранилище для реплицируемых объектов
+        'ServerScriptService', // Серверные скрипты
+        'ServerStorage', // Хранилище серверных объектов
+        'StarterPlayer', // Настройки игрока
+        'StarterPack', // Инвентарь игрока
+        'StarterGui', // Интерфейс игрока
+        'SoundService', // Управление звуком
+        'Chat', // Система чата
+        'Players', // Управление игроками
+        'Teams', // Управление командами
+        'Team', // Объект команды
+        'Humanoid', // Управление персонажем
+        'BodyVelocity', // Управление скоростью
+        'BodyAngularVelocity', // Управление угловой скоростью
+        'BodyForce', // Применение силы
+        'BodyGyro', // Управление ориентацией
+        'BodyPosition', // Управление позицией
+        'BodyThrust', // Применение тяги
+        'ClickDetector', // Детектор кликов
+        'ProximityPrompt', // Подсказки взаимодействия
+        'Tool', // Инструмент игрока
+        'Weld', // Соединение объектов
+        'WeldConstraint', // Ограничение соединения
+        'Motor6D', // Анимационное соединение
+        'Attachment', // Точка крепления
+        'Bone', // Кость для анимаций
+        'Animation', // Анимация
+        'AnimationTrack', // Трек анимации
+        'Animator', // Управление анимациями
+        'BasePart', // Базовый физический объект
+        'PartOperation', // Операция с частями
+        'UnionOperation', // Объединение частей
+        'NegateOperation', // Отрицание частей
+        'MeshPart', // Сеточный объект
+        'SurfaceAppearance', // Внешний вид поверхности
+        'Decal', // Наклейка
+        'Texture', // Текстура
+        'ParticleEmitter', // Эмиттер частиц
+        'Beam', // Луч
+        'Trail', // След
+        'Sparkles', // Искры
+        'Smoke', // Дым
+        'Fire', // Огонь
+        'Explosion', // Взрыв
+        'PointLight', // Точечный свет
+        'SpotLight', // Прожектор
+        'SurfaceLight', // Поверхностный свет
+        'Folder', // Папка для организации
+        'ModuleScript', // Модульный скрипт
+        'Script', // Обычный скрипт
+        'LocalScript', // Локальный скрипт
+        'RemoteEvent', // Удаленное событие
+        'RemoteFunction', // Удаленная функция
+        'BindableEvent', // Привязываемое событие
+        'BindableFunction', // Привязываемая функция
+        'Actor', // Актер для параллелизма
+        'Configuration', // Конфигурация
+        'Dialog', // Диалог NPC
+        'DialogChoice', // Вариант диалога
+        'Sound', // Звуковой объект
+        'SoundGroup', // Группа звуков
+        'ChorusSoundEffect', // Эффект хора
+        'CompressorSoundEffect', // Эффект компрессора
+        'DistortionSoundEffect', // Эффект искажения
+        'EchoSoundEffect', // Эффект эха
+        'EqualizerSoundEffect', // Эффект эквалайзера
+        'FlangeSoundEffect', // Эффект фланжера
+        'PitchShiftSoundEffect', // Эффект изменения высоты
+        'ReverbSoundEffect', // Эффект реверберации
+        'TremoloSoundEffect', // Эффект тремоло
+        'PathfindingService', // Сервис поиска пути
+        'Path', // Путь
+        'PathfindingModifier', // Модификатор пути
+        'Terrain', // Ландшафт
+        'TerrainRegion', // Регион ландшафта
+        'Water', // Вода
+        'Clouds', // Облака
+        'Sky', // Небо
+        'Atmosphere', // Атмосфера
+        'PostEffect', // Пост-эффект
+        'BloomEffect', // Эффект свечения
+        'BlurEffect', // Эффект размытия
+        'ColorCorrectionEffect', // Эффект цветокоррекции
+        'SunRaysEffect', // Эффект солнечных лучей
+        'GuiService', // Сервис интерфейса
+        'GuiObject', // Базовый объект интерфейса
+        'Frame', // Рамка интерфейса
+        'ImageButton', // Кнопка с изображением
+        'ImageLabel', // Метка с изображением
+        'TextButton', // Текстовая кнопка
+        'TextLabel', // Текстовая метка
+        'TextBox', // Текстовое поле
+        'ViewportFrame', // Рамка вида
+        'ArcHandles', // Дуги для редактирования
+        'Handles', // Ручки для редактирования
+        'Selection', // Выделение объектов
+        'AdService', // Сервис рекламы
+        'AnalyticsService', // Сервис аналитики
+        'BadgeService', // Сервис значков
+        'CollectionService', // Управление коллекциями
+        'DataStoreService', // Хранилище данных
+        'Debris', // Удаление объектов
+        'GamePassService', // Сервис игровых пропусков
+        'InsertService', // Вставка объектов
+        'MarketplaceService', // Сервис магазина
+        'PhysicsService', // Сервис физики
+        'PolicyService', // Сервис политики
+        'RunService', // Сервис выполнения
+        'TeleportService', // Сервис телепортации
+        'TextService', // Сервис текста
+        'TweenService', // Сервис анимаций
+        'UserInputService', // Сервис ввода
+        'VRService' // Сервис виртуальной реальности
+      ];
+
+      // Глобальные функции Roblox
+      const robloxFunctions = [
+        'print', // Вывод в консоль
+        'warn', // Предупреждение в консоли
+        'error', // Ошибка в консоли
+        'wait', // Пауза выполнения
+        'tick', // Текущее время
+        'time', // Время с начала игры
+        'os.time', // Системное время
+        'os.date', // Форматированная дата
+        'math.abs', // Абсолютное значение
+        'math.acos', // Арккосинус
+        'math.asin', // Арксинус
+        'math.atan', // Арктангенс
+        'math.atan2', // Арктангенс двух аргументов
+        'math.ceil', // Округление вверх
+        'math.clamp', // Ограничение значения
+        'math.cos', // Косинус
+        'math.cosh', // Гиперболический косинус
+        'math.deg', // Радианы в градусы
+        'math.exp', // Экспонента
+        'math.floor', // Округление вниз
+        'math.fmod', // Модуль деления
+        'math.frexp', // Разложение числа
+        'math.ldexp', // Обратное разложение
+        'math.log', // Натуральный логарифм
+        'math.log10', // Десятичный логарифм
+        'math.max', // Максимум
+        'math.min', // Минимум
+        'math.modf', // Целая и дробная части
+        'math.noise', // Шум Перлина
+        'math.pow', // Степень
+        'math.rad', // Градусы в радианы
+        'math.random', // Случайное число
+        'math.randomseed', // Инициализация генератора
+        'math.sign', // Знак числа
+        'math.sin', // Синус
+        'math.sinh', // Гиперболический синус
+        'math.sqrt', // Квадратный корень
+        'math.tan', // Тангенс
+        'math.tanh', // Гиперболический тангенс
+        'string.byte', // Код символа
+        'string.char', // Символ из кода
+        'string.find', // Поиск подстроки
+        'string.format', // Форматирование строки
+        'string.gsub', // Замена в строке
+        'string.len', // Длина строки
+        'string.lower', // Нижний регистр
+        'string.match', // Поиск совпадений
+        'string.rep', // Повтор строки
+        'string.reverse', // Реверс строки
+        'string.sub', // Подстрока
+        'string.upper', // Верхний регистр
+        'table.concat', // Объединение таблицы
+        'table.insert', // Вставка в таблицу
+        'table.remove', // Удаление из таблицы
+        'table.sort', // Сортировка таблицы
+        'game:GetService', // Получение сервиса
+        'game:FindFirstChild', // Поиск первого потомка
+        'game:GetChildren', // Получение всех потомков
+        'game:WaitForChild', // Ожидание потомка
+        'Instance.new', // Создание объекта
+        'CFrame.new', // Новый CFrame
+        'Vector3.new', // Новый Vector3
+        'Vector2.new', // Новый Vector2
+        'UDim2.new', // Новый UDim2
+        'Color3.new', // Новый Color3
+        'BrickColor.new', // Новый BrickColor
+        'Enum.Material.new', // Создание материала
+        'Enum.KeyCode.new', // Создание клавиши
+        'game:GetObjects', // Получение объектов
+        'game:Clone', // Клонирование объекта
+        'game:Destroy', // Уничтожение объекта
+        'game:IsA', // Проверка типа
+        'game:GetDescendants', // Получение всех потомков
+        'workspace:FindPartOnRay', // Поиск части по лучу
+        'workspace:FindPartsInRegion', // Поиск частей в регионе
+        'UserInputService:IsKeyDown', // Проверка нажатия клавиши
+        'UserInputService:IsMouseButtonPressed', // Проверка нажатия мыши
+        'TweenService:Create', // Создание твина
+        'RunService:BindToRenderStep', // Привязка к рендерингу
+        'RunService:UnbindFromRenderStep' // Отвязка от рендеринга
+      ];
+
+      // Перечисления Roblox
+      const robloxEnums = [
+        'Enum.Material.Plastic', // Материал: пластик
+        'Enum.Material.Wood', // Материал: дерево
+        'Enum.Material.Metal', // Материал: металл
+        'Enum.Material.Glass', // Материал: стекло
+        'Enum.Material.Concrete', // Материал: бетон
+        'Enum.Material.Brick', // Материал: кирпич
+        'Enum.Material.Granite', // Материал: гранит
+        'Enum.Material.Marble', // Материал: мрамор
+        'Enum.Material.Slate', // Материал: сланец
+        'Enum.Material.Sand', // Материал: песок
+        'Enum.Material.Fabric', // Материал: ткань
+        'Enum.Material.SmoothPlastic', // Материал: гладкий пластик
+        'Enum.Material.Neon', // Материал: неон
+        'Enum.Material.Cobblestone', // Материал: булыжник
+        'Enum.Material.WoodPlanks', // Материал: деревянные доски
+        'Enum.KeyCode.Space', // Клавиша: пробел
+        'Enum.KeyCode.Left', // Клавиша: влево
+        'Enum.KeyCode.Right', // Клавиша: вправо
+        'Enum.KeyCode.Up', // Клавиша: вверх
+        'Enum.KeyCode.Down', // Клавиша: вниз
+        'Enum.KeyCode.W', // Клавиша: W
+        'Enum.KeyCode.A', // Клавиша: A
+        'Enum.KeyCode.S', // Клавиша: S
+        'Enum.KeyCode.D', // Клавиша: D
+        'Enum.KeyCode.E', // Клавиша: E
+        'Enum.KeyCode.Q', // Клавиша: Q
+        'Enum.KeyCode.R', // Клавиша: R
+        'Enum.KeyCode.F', // Клавиша: F
+        'Enum.KeyCode.Z', // Клавиша: Z
+        'Enum.KeyCode.X', // Клавиша: X
+        'Enum.UserInputType.MouseButton1', // Ввод: левая кнопка мыши
+        'Enum.UserInputType.MouseButton2', // Ввод: правая кнопка мыши
+        'Enum.UserInputType.MouseWheel', // Ввод: колесо мыши
+        'Enum.UserInputType.Keyboard', // Ввод: клавиатура
+        'Enum.UserInputType.Gamepad1', // Ввод: геймпад
+        'Enum.UserInputType.Touch', // Ввод: касание
+        'Enum.UserInputType.MouseMovement', // Ввод: движение мыши
+        'Enum.ConnectionState.Connected', // Состояние: подключено
+        'Enum.ConnectionState.Disconnected', // Состояние: отключено
+        'Enum.RenderPriority.Camera', // Приоритет: камера
+        'Enum.RenderPriority.Input', // Приоритет: ввод
+        'Enum.RenderPriority.Update', // Приоритет: обновление
+        'Enum.NormalId.Top', // Нормаль: верх
+        'Enum.NormalId.Bottom', // Нормаль: низ
+        'Enum.NormalId.Left', // Нормаль: лево
+        'Enum.NormalId.Right', // Нормаль: право
+        'Enum.NormalId.Front', // Нормаль: перед
+        'Enum.NormalId.Back', // Нормаль: зад
+        'Enum.Font.Roboto', // Шрифт: Roboto
+        'Enum.Font.SourceSans', // Шрифт: SourceSans
+        'Enum.Font.Arial', // Шрифт: Arial
+        'Enum.Font.Code', // Шрифт: Code
+        'Enum.Font.Legacy', // Шрифт: Legacy
+        'Enum.Font.Gotham', // Шрифт: Gotham
+        'Enum.EasingStyle.Sine', // Стиль анимации: синус
+        'Enum.EasingStyle.Quad', // Стиль анимации: квадратичный
+        'Enum.EasingStyle.Cubic', // Стиль анимации: кубический
+        'Enum.EasingStyle.Quart', // Стиль анимации: квартичный
+        'Enum.EasingStyle.Quint', // Стиль анимации: квинтичный
+        'Enum.EasingStyle.Exponential', // Стиль анимации: экспоненциальный
+        'Enum.EasingStyle.Circular', // Стиль анимации: круговой
+        'Enum.EasingStyle.Bounce', // Стиль анимации: отскок
+        'Enum.EasingStyle.Back', // Стиль анимации: возврат
+        'Enum.EasingStyle.Elastic', // Стиль анимации: эластичный
+        'Enum.ActuatorType.Motor', // Тип привода: мотор
+        'Enum.ActuatorType.Servo', // Тип привода: серво
+        'Enum.ActuatorType.None', // Тип привода: отсутствует
+        'Enum.CollisionFidelity.Default', // Точность столкновений: стандарт
+        'Enum.CollisionFidelity.Precise', // Точность столкновений: точная
+        'Enum.CollisionFidelity.Hull', // Точность столкновений: оболочка
+        'Enum.Anchored.True', // Фиксация: включена
+        'Enum.Anchored.False', // Фиксация: выключена
+        'Enum.SurfaceType.Smooth', // Тип поверхности: гладкая
+        'Enum.SurfaceType.Glue', // Тип поверхности: клей
+        'Enum.SurfaceType.Weld', // Тип поверхности: сварка
+        'Enum.SurfaceType.Hinge', // Тип поверхности: шарнир
+        'Enum.SurfaceType.Motor', // Тип поверхности: мотор
+      ];
+
+      // Сниппеты кода для Roblox
+      const robloxSnippets = [
+        {
+          label: 'newpart',
+          detail: 'Create a new Part in workspace',
+          insertText: 'local part = Instance.new("Part")\npart.Parent = workspace\npart.Position = Vector3.new(${1:0}, ${2:5}, ${3:0})\npart.Size = Vector3.new(${4:4}, ${5:1}, ${6:4})\npart.Anchored = ${7:true}\npart.Material = Enum.Material.${8:Plastic}',
+          insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet
+        },
+        {
+          label: 'playeradded',
+          detail: 'Handle PlayerAdded event',
+          insertText: 'game.Players.PlayerAdded:Connect(function(player)\n\t${0:-- Code here}\nend)',
+          insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet
+        },
+        {
+          label: 'clickdetector',
+          detail: 'Add ClickDetector to a part',
+          insertText: 'local detector = Instance.new("ClickDetector")\ndetector.Parent = ${1:part}\ndetector.MouseClick:Connect(function(player)\n\t${0:-- Code here}\nend)',
+          insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet
+        },
+        {
+          label: 'tween',
+          detail: 'Create a tween animation',
+          insertText: 'local TweenService = game:GetService("TweenService")\nlocal info = TweenInfo.new(${1:1}, Enum.EasingStyle.${2:Sine}, Enum.EasingDirection.${3:Out})\nlocal tween = TweenService:Create(${4:part}, info, {${5:Position} = ${6:Vector3.new(0, 10, 0)}})\ntween:Play()',
+          insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet
+        },
+        {
+          label: 'remoteevent',
+          detail: 'Create and use a RemoteEvent',
+          insertText: 'local remote = Instance.new("RemoteEvent")\nremote.Parent = game.ReplicatedStorage\nremote.Name = "${1:MyEvent}"\nremote.OnServerEvent:Connect(function(player, ${2:args})\n\t${0:-- Code here}\nend)',
+          insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet
+        },
+        {
+          label: 'module',
+          detail: 'Create a ModuleScript',
+          insertText: 'local module = {}\n\nfunction module.${1:FunctionName}(${2:args})\n\t${0:-- Code here}\nend\n\nreturn module',
+          insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet
+        },
+        {
+          label: 'bindableevent',
+          detail: 'Create a BindableEvent',
+          insertText: 'local bindable = Instance.new("BindableEvent")\nbindable.Name = "${1:MyEvent}"\nbindable.Event:Connect(function(${2:args})\n\t${0:-- Code here}\nend)',
+          insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet
+        },
+        {
+          label: 'proximityprompt',
+          detail: 'Add ProximityPrompt to a part',
+          insertText: 'local prompt = Instance.new("ProximityPrompt")\nprompt.Parent = ${1:part}\nprompt.Triggered:Connect(function(player)\n\t${0:-- Code here}\nend)',
+          insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet
+        }
+      ];
+
+      // Документация для всплывающих подсказок
+      const robloxDocumentation = {
+        'game': 'The root object of the Roblox game hierarchy.',
+        'workspace': 'Contains all 3D objects in the game world.',
+        'Players': 'Manages player instances and connections.',
+        'Instance': 'Base class for all Roblox objects.',
+        'Part': 'A physical object in the 3D world.',
+        'Model': 'A collection of parts and other objects.',
+        'print': 'Prints a message to the output.',
+        'wait': 'Pauses execution for a specified time.',
+        'Instance.new': 'Creates a new instance of a specified class.',
+        'Vector3.new': 'Creates a new 3D vector.',
+        'CFrame.new': 'Creates a new coordinate frame.',
+        'UDim2.new': 'Creates a new 2D UI dimension.',
+        'Color3.new': 'Creates a new RGB color.',
+        'Enum.Material.Plastic': 'Smooth plastic material for parts.',
+        'Enum.KeyCode.Space': 'Represents the spacebar key.',
+        'game:GetService': 'Gets a service by name.',
+        'game:FindFirstChild': 'Finds the first child with a given name.',
+        'game:WaitForChild': 'Waits until a child with a given name exists.',
+        'TweenService:Create': 'Creates a tween animation.',
+        'UserInputService:IsKeyDown': 'Checks if a key is pressed.',
+        'RunService:BindToRenderStep': 'Binds a function to the render step.'
+      };
+
+      // Инициализация редактора Monaco
+      const editor = monaco.editor.create(document.getElementById('editor'), {
+        language: 'lua',
+        theme: 'vs-dark',
+        fontSize: 14,
+        automaticLayout: true,
+        cursorBlinking: 'phase',
+        cursorSmoothCaretAnimation: true,
+        wordWrap: 'on',
+        minimap: { enabled: false }, // Отключение миникарты для производительности
+        renderWhitespace: 'none', // Отключение рендеринга пробелов
+        maxTokenizationLineLength: 10000, // Ограничение длины строки
+        scrollBeyondLastLine: false, // Отключение прокрутки за последнюю строку
+        folding: true, // Включение сворачивания кода
+        glyphMargin: true, // Включение полей для маркеров
+        lineNumbersMinChars: 3, // Минимальная ширина номеров строк
+        contextmenu: true, // Включение контекстного меню
+        tabSize: 2, // Размер табуляции
+        insertSpaces: true // Использование пробелов вместо табуляции
+      });
+
+      // Регистрация провайдера автодополнения
+      monaco.languages.registerCompletionItemProvider('lua', {
+        triggerCharacters: ['.', ':'],
+        provideCompletionItems: (model, position) => {
+          const textUntilPosition = model.getValueInRange({
+            startLineNumber: 1,
+            startColumn: 1,
+            endLineNumber: position.lineNumber,
+            endColumn: position.column
+          });
+          const word = model.getWordAtPosition(position);
+          const suggestions = [];
+
+          // Контекстно-зависимые подсказки
+          if (textUntilPosition.endsWith('game.')) {
+            suggestions.push(
+              { label: 'GetService', kind: monaco.languages.CompletionItemKind.Method, insertText: 'GetService("${1:service}")', insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet, detail: 'Gets a service by name' },
+              { label: 'Players', kind: monaco.languages.CompletionItemKind.Property, insertText: 'Players', detail: 'Player management service' },
+              { label: 'Workspace', kind: monaco.languages.CompletionItemKind.Property, insertText: 'Workspace', detail: '3D world container' },
+              { label: 'ReplicatedStorage', kind: monaco.languages.CompletionItemKind.Property, insertText: 'ReplicatedStorage', detail: 'Storage for replicated objects' },
+              { label: 'ServerScriptService', kind: monaco.languages.CompletionItemKind.Property, insertText: 'ServerScriptService', detail: 'Server-side scripts' }
+            );
+          } else if (textUntilPosition.endsWith('Enum.')) {
+            robloxEnums.forEach(item => {
+              const parts = item.split('.');
+              suggestions.push({
+                label: parts[parts.length - 1],
+                kind: monaco.languages.CompletionItemKind.EnumMember,
+                insertText: item,
+                detail: robloxDocumentation[item] || 'Roblox Enum'
+              });
+            });
+          } else {
+            // Общие классы
+            robloxClasses.forEach(cls => {
+              suggestions.push({
+                label: cls,
+                kind: monaco.languages.CompletionItemKind.Class,
+                insertText: cls,
+                detail: robloxDocumentation[cls] || 'Roblox Class'
+              });
+            });
+            // Глобальные функции
+            robloxFunctions.forEach(func => {
+              suggestions.push({
+                label: func,
+                kind: monaco.languages.CompletionItemKind.Function,
+                insertText: func.includes('.') ? `${func}($1)` : func,
+                insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+                detail: robloxDocumentation[func] || 'Roblox Function'
+              });
+            });
+            // Сниппеты
+            robloxSnippets.forEach(snippet => {
+              suggestions.push({
+                label: snippet.label,
+                kind: monaco.languages.CompletionItemKind.Snippet,
+                insertText: snippet.insertText,
+                insertTextRules: snippet.insertTextRules,
+                detail: snippet.detail
+              });
+            });
+          }
+
+          return { suggestions };
+        }
+      });
+
+      // Регистрация провайдера всплывающих подсказок
+      monaco.languages.registerHoverProvider('lua', {
+        provideHover: (model, position) => {
+          const word = model.getWordAtPosition(position);
+          if (word && robloxDocumentation[word.word]) {
+            return {
+              contents: [{ value: `**${word.word}**\n${robloxDocumentation[word.word]}` }]
+            };
+          }
+          return null;
+        }
+      });
+
+      // Базовый линтер для Lua
+      const lintLuaCode = (model) => {
+        const code = model.getValue();
+        const errors = [];
+        const lines = code.split('\n');
+        lines.forEach((line, index) => {
+          // Проверка на незакрытые скобки
+          if (line.includes('(') && !line.includes(')')) {
+            errors.push({
+              severity: monaco.MarkerSeverity.Error,
+              message: 'Unclosed parenthesis',
+              startLineNumber: index + 1,
+              startColumn: 1,
+              endLineNumber: index + 1,
+              endColumn: line.length + 1
+            });
+          }
+          // Проверка на использование устаревших функций
+          if (line.includes('game.FindFirstChild')) {
+            errors.push({
+              severity: monaco.MarkerSeverity.Warning,
+              message: 'FindFirstChild is deprecated, use WaitForChild instead',
+              startLineNumber: index + 1,
+              startColumn: 1,
+              endLineNumber: index + 1,
+              endColumn: line.length + 1
+            });
+          }
+          // Проверка на неправильное использование локальных переменных
+          if (line.match(/^\s*local\s+[a-zA-Z_][a-zA-Z0-9_]*\s*=/) && !line.includes('=')) {
+            errors.push({
+              severity: monaco.MarkerSeverity.Error,
+              message: 'Local variable declared without assignment',
+              startLineNumber: index + 1,
+              startColumn: 1,
+              endLineNumber: index + 1,
+              endColumn: line.length + 1
+            });
+          }
+        });
+        monaco.editor.setModelMarkers(model, 'lua-linter', errors);
+      };
+
+      // Переменные для управления вкладками и историей
+      const tabsContainer = document.getElementById('tabs');
+      const addTabButton = document.getElementById('addTab');
+      let models = [];
+      let currentTab = -1;
+      let tabCounter = 1;
+      let history = [];
+
+      // Функция сохранения всех вкладок
+      function saveAllTabs() {
+        const data = models.map((m, i) => ({
+          name: tabsContainer.querySelectorAll('.tab .title')[i]?.textContent || `Tab ${i + 1}`,
+          code: m.getValue()
+        }));
+        localStorage.setItem('cattyx_tabs', JSON.stringify(data));
+      }
+
+      // Функция загрузки сохраненных вкладок
+      function loadSavedTabs() {
+        const saved = JSON.parse(localStorage.getItem('cattyx_tabs') || '[]');
+        if (saved.length === 0) {
+          createTab('Tab 1', '-- Welcome to CattyX Executor\nprint("Hello, Roblox!")');
+        } else {
+          saved.forEach(tab => createTab(tab.name, tab.code));
+        }
+      }
+
+      // Функция сохранения истории изменений
+      function saveHistory(model, change) {
+        history.push({
+          model: model,
+          change: change,
+          timestamp: new Date().toLocaleString()
+        });
+        updateHistoryPanel();
+        if (history.length > 50) {
+          history.shift();
+        }
+        localStorage.setItem('cattyx_history', JSON.stringify(history));
+      }
+
+      // Функция обновления панели истории
+      function updateHistoryPanel() {
+        const historyList = document.getElementById('historyList');
+        historyList.innerHTML = '';
+        history.forEach((entry, index) => {
+          const li = document.createElement('li');
+          li.textContent = `Change at ${entry.timestamp}`;
+          li.addEventListener('click', () => {
+            editor.setModel(entry.model);
+            editor.applyEdits([entry.change]);
+            editor.focus();
+          });
+          historyList.appendChild(li);
+        });
+      }
+
+      // Функция создания новой вкладки
+      function createTab(name = `Tab ${tabCounter++}`, code = '') {
+        const model = monaco.editor.createModel(code, 'lua');
+        models.push(model);
+
+        const tab = document.createElement('div');
+        tab.className = 'tab';
+        tab.style.opacity = '0';
+        tab.style.transition = 'opacity 0.3s ease';
+
+        const title = document.createElement('span');
+        title.className = 'title';
+        title.textContent = name;
+
+        const closeBtn = document.createElement('span');
+        closeBtn.className = 'close';
+        closeBtn.textContent = '✕';
+
+        tab.appendChild(title);
+        tab.appendChild(closeBtn);
+        tabsContainer.insertBefore(tab, addTabButton);
+
+        // Анимация появления вкладки
+        setTimeout(() => { tab.style.opacity = '1'; }, 10);
+
+        closeBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const index = Array.from(tabsContainer.children).indexOf(tab);
+          tab.style.opacity = '0';
+          setTimeout(() => {
+            tabsContainer.removeChild(tab);
+            models.splice(index, 1);
+            if (index === currentTab) {
+              if (models.length > 0) switchTab(0);
+              else {
+                editor.setModel(null);
+                currentTab = -1;
+              }
+            } else if (index < currentTab) currentTab--;
+            saveAllTabs();
+          }, 300);
+        });
+
+        tab.addEventListener('click', () => switchTab(models.indexOf(model)));
+
+        title.addEventListener('dblclick', () => {
+          const input = document.createElement('input');
+          input.value = title.textContent;
+          tab.replaceChild(input, title);
+          input.focus();
+          input.addEventListener('blur', () => {
+            title.textContent = input.value || name;
+            tab.replaceChild(title, input);
+            saveAllTabs();
+          });
+          input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') input.blur();
+          });
+        });
+
+        model.onDidChangeContent((e) => {
+          saveAllTabs();
+          lintLuaCode(model);
+          e.changes.forEach(change => {
+            saveHistory(model, change);
+          });
+        });
+
+        switchTab(models.length - 1);
+      }
+
+      // Функция переключения вкладок
+      function switchTab(index) {
+        if (index < 0 || index >= models.length) return;
+        currentTab = index;
+        const tabElements = Array.from(tabsContainer.querySelectorAll('.tab'));
+        tabElements.forEach((t, i) => {
+          t.classList.toggle('active', i === index);
+          t.style.transform = i === index ? 'scale(1.05)' : 'scale(1)';
+          setTimeout(() => { t.style.transform = 'scale(1)'; }, 200);
+        });
+        editor.setModel(models[index]);
+        lintLuaCode(models[index]);
+        editor.focus();
+      }
+
+      // Функция скачивания скрипта
+      function downloadScript() {
+        if (currentTab >= 0) {
+          const model = models[currentTab];
+          const name = tabsContainer.querySelectorAll('.tab .title')[currentTab]?.textContent || 'script';
+          const code = model.getValue();
+          const blob = new Blob([code], { type: 'text/plain' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `${name}.lua`;
+          a.click();
+          URL.revokeObjectURL(url);
+        }
+      }
+
+      // Обработка загрузки файла
+      document.getElementById('fileInput').addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            createTab(file.name, event.target.result);
+          };
+          reader.readAsText(file);
+        }
+      });
+
+      // Панель поиска
+      const searchPanel = document.getElementById('searchPanel');
+      const searchInput = document.getElementById('searchInput');
+      const replaceInput = document.getElementById('replaceInput');
+      const findNextBtn = document.getElementById('findNext');
+      const replaceBtn = document.getElementById('replace');
+      const replaceAllBtn = document.getElementById('replaceAll');
+      const closeSearchBtn = document.getElementById('closeSearch');
+
+      let lastSearch = '';
+      let lastSearchPos = null;
+
+      findNextBtn.addEventListener('click', () => {
+        if (currentTab < 0) return;
+        const query = searchInput.value;
+        if (!query) return;
+        const model = models[currentTab];
+        let range;
+
+        if (query !== lastSearch) {
+          lastSearch = query;
+          lastSearchPos = null;
+        }
+
+        if (lastSearchPos) {
+          range = model.findNextMatch(query, lastSearchPos, true, true, false, true);
+        } else {
+          range = model.findNextMatch(query, { lineNumber: 1, column: 1 }, true, true, false, true);
+        }
+
+        if (range) {
+          editor.setSelection(range);
+          editor.revealRangeInCenter(range);
+          lastSearchPos = { lineNumber: range.endLineNumber, column: range.endColumn };
+        }
+      });
+
+      replaceBtn.addEventListener('click', () => {
+        if (currentTab < 0) return;
+        const query = searchInput.value;
+        const replaceText = replaceInput.value;
+        if (!query) return;
+        const model = models[currentTab];
+        const range = editor.getSelection();
+        if (range) {
+          model.pushEditOperations([], [{ range, text: replaceText }], () => []);
+          editor.setSelection({
+            startLineNumber: range.endLineNumber,
+            startColumn: range.endColumn,
+            endLineNumber: range.endLineNumber,
+            endColumn: range.endColumn
+          });
+          findNextBtn.click();
+        }
+      });
+
+      replaceAllBtn.addEventListener('click', () => {
+        if (currentTab < 0) return;
+        const query = searchInput.value;
+        const replaceText = replaceInput.value;
+        if (!query) return;
+        const model = models[currentTab];
+        const matches = model.findMatches(query, true, true, true, null, true);
+        model.pushEditOperations([], matches.map(match => ({
+          range: match.range,
+          text: replaceText
+        })), () => []);
+      });
+
+      closeSearchBtn.addEventListener('click', () => {
+        searchPanel.style.display = 'none';
+        searchInput.value = '';
+        replaceInput.value = '';
+        lastSearch = '';
+        lastSearchPos = null;
+        editor.focus();
+      });
+
+      document.getElementById('openSearch').addEventListener('click', () => {
+        searchPanel.style.display = 'block';
+        searchInput.focus();
+      });
+
+      // Панель настроек
+      const settingsPanel = document.getElementById('settingsPanel');
+      const themeSelect = document.getElementById('themeSelect');
+      const fontSizeInput = document.getElementById('fontSizeInput');
+      const applySettingsBtn = document.getElementById('applySettings');
+      const closeSettingsBtn = document.getElementById('closeSettings');
+
+      applySettingsBtn.addEventListener('click', () => {
+        const theme = themeSelect.value;
+        const fontSize = parseInt(fontSizeInput.value);
+        document.documentElement.setAttribute('data-theme', theme);
+        monaco.editor.setTheme(theme === 'light' ? 'vs' : theme === 'dark' ? 'vs-dark' : 'vs-dark');
+        editor.updateOptions({ fontSize: Math.max(8, Math.min(24, fontSize)) });
+        localStorage.setItem('editorTheme', theme);
+        localStorage.setItem('editorFontSize', fontSize);
+      });
+
+      closeSettingsBtn.addEventListener('click', () => {
+        settingsPanel.style.display = 'none';
+        editor.focus();
+      });
+
+      document.getElementById('openSettings').addEventListener('click', () => {
+        settingsPanel.style.display = 'block';
+        const savedTheme = localStorage.getItem('editorTheme') || 'purple';
+        const savedFontSize = localStorage.getItem('editorFontSize') || '14';
+        themeSelect.value = savedTheme;
+        fontSizeInput.value = savedFontSize;
+      });
+
+      // Панель истории изменений
+      const historyPanel = document.getElementById('historyPanel');
+      const clearHistoryBtn = document.getElementById('clearHistory');
+      const closeHistoryBtn = document.getElementById('closeHistory');
+
+      clearHistoryBtn.addEventListener('click', () => {
+        history = [];
+        updateHistoryPanel();
+        localStorage.setItem('cattyx_history', JSON.stringify(history));
+      });
+
+      closeHistoryBtn.addEventListener('click', () => {
+        historyPanel.style.display = 'none';
+        editor.focus();
+      });
+
+      document.getElementById('openHistory').addEventListener('click', () => {
+        historyPanel.style.display = 'block';
+      });
+
+      // Обработчики горячих клавиш
+      document.addEventListener('keydown', (e) => {
+        if (e.ctrlKey && e.key.toLowerCase() === 's') {
+          e.preventDefault();
+          saveAllTabs();
+          alert('Tabs saved!');
+        } else if (e.ctrlKey && e.key.toLowerCase() === 'n') {
+          e.preventDefault();
+          createTab();
+        } else if (e.ctrlKey && e.key.toLowerCase() === 'f') {
+          e.preventDefault();
+          searchPanel.style.display = 'block';
+          searchInput.focus();
+        } else if (e.ctrlKey && e.key.toLowerCase() === 'h') {
+          e.preventDefault();
+          historyPanel.style.display = 'block';
+        }
+      });
+
+      // Автосохранение каждые 5 секунд
+      setInterval(saveAllTabs, 5000);
+
+      // Добавление контекстного меню
+      editor.addAction({
+        id: 'download-script',
+        label: 'Download Script',
+        contextMenuGroupId: 'navigation',
+        contextMenuOrder: 1.5,
+        run: downloadScript
+      });
+
+      // Оптимизация производительности для больших файлов
+      editor.onDidChangeModelContent(() => {
+        const model = editor.getModel();
+        if (model && model.getLineCount() > 1000) {
+          editor.updateOptions({
+            renderWhitespace: 'none',
+            minimap: { enabled: false }
+          });
+        }
+      });
+
+      // Инициализация редактора
+      loadSavedTabs();
+
+      // Установка начальной темы
+      const savedTheme = localStorage.getItem('editorTheme') || 'purple';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    });
+  </script>
+</body>
+</html>
