@@ -8,20 +8,20 @@
     /* Определение CSS-переменных для темы */
     :root {
       --body-bg: linear-gradient(145deg, #111827, #1f2937, #374151, #0f172a);
-      --tabs-bg: linear-gradient(to right, #374151, #1f2937);
-      --tabs-border: #4b5563;
-      --tab-bg: linear-gradient(to bottom, #1f2937, #111827);
-      --tab-active-bg: linear-gradient(to bottom, #4b5563, #374151);
-      --tab-border: #4b5563;
-      --tab-text: #d1d5db;
+      --tabs-bg: linear-gradient(to right, #0F0F0F, #141414);
+      --tabs-border: #141414;
+      --tab-bg: linear-gradient(to bottom, #0F0F0F, #0A0A0A);
+      --tab-active-bg: linear-gradient(to bottom, #141414, #0F0F0F);
+      --tab-border: #141414;
+      --tab-text: #999999;
       --tab-active-text: white;
-      --add-tab-bg: linear-gradient(to right, #374151, #4b5563);
-      --add-tab-hover-bg: linear-gradient(to right, #4b5563, #6b7280);
-      --editor-bg:Sy linear-gradient(135deg, #0A0F1A, #141C29);
+      --add-tab-bg: linear-gradient(to right, #0F0F0F, #141414);
+      --add-tab-hover-bg: linear-gradient(to right, #141414, #1A1A1A);
+      --editor-bg: linear-gradient(135deg, #0A0A0A, #0F0F0F);
       --panel-bg: #1f2937;
       --panel-border: #4b5563;
-      --panel-button-bg: #374151;
-      --panel-button-hover-bg: #4b5563;
+      --panel-button-bg: #0F0F0F;
+      --panel-button-hover-bg: #141414;
       --panel-input-bg: #111827;
     }
 
@@ -66,9 +66,9 @@
       display: flex;
       align-items: center;
       font-size: 14px;
-      transition: all 0.3s ease;
+      transition: all 0.6s ease-in-out;
       opacity: 0;
-      transform: scale(0.95);
+      transform: scale(0.95) translateY(-10px);
     }
 
     /* Стили для активной вкладки */
@@ -77,7 +77,7 @@
       color: var(--tab-active-text);
       border-bottom: none;
       opacity: 1;
-      transform: scale(1);
+      transform: scale(1) translateY(0);
     }
 
     /* Стили для заголовка вкладки */
@@ -93,7 +93,7 @@
       margin-left: 8px;
       color: var(--tab-text);
       cursor: pointer;
-      font-weight -weight: bold;
+      font-weight: bold;
       transition: color 0.2s ease;
     }
 
@@ -171,7 +171,6 @@
       padding: 10px;
       display: none;
       z-index: 20;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     }
 
     #searchPanel input {
@@ -207,7 +206,6 @@
       padding: 10px;
       display: none;
       z-index: 20;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
       max-height: 300px;
       overflow-y: auto;
     }
@@ -258,7 +256,7 @@
   <div id="searchPanel">
     <input type="text" id="searchInput" placeholder="Search...">
     <input type="text" id="replaceInput" placeholder="Replace...">
-    <button id="findNext">Find Next</button button>
+    <button id="findNext">Find Next</button>
     <button id="replace">Replace</button>
     <button id="replaceAll">Replace All</button>
     <button id="closeSearch">Close</button>
@@ -861,14 +859,14 @@
         // Плавная анимация появления
         setTimeout(() => {
           tab.style.opacity = '1';
-          tab.style.transform = 'scale(1)';
+          tab.style.transform = 'scale(1) translateY(0)';
         }, 10);
 
         closeBtn.addEventListener('click', (e) => {
           e.stopPropagation();
           const index = Array.from(tabsContainer.children).indexOf(tab);
           tab.style.opacity = '0';
-          tab.style.transform = 'scale(0.95)';
+          tab.style.transform = 'scale(0.95) translateY(-10px)';
           setTimeout(() => {
             tabsContainer.removeChild(tab);
             models.splice(index, 1);
@@ -880,7 +878,7 @@
               }
             } else if (index < currentTab) currentTab--;
             saveAllTabs();
-          }, 300);
+          }, 600);
         });
 
         tab.addEventListener('click', () => switchTab(models.indexOf(model)));
@@ -918,8 +916,8 @@
         const tabElements = Array.from(tabsContainer.querySelectorAll('.tab'));
         tabElements.forEach((t, i) => {
           t.classList.toggle('active', i === index);
-          t.style.transform = i === index ? 'scale(1.05)' : 'scale(1)';
-          setTimeout(() => { t.style.transform = 'scale(1)'; }, 200);
+          t.style.transform = i === index ? 'scale(1.05) translateY(0)' : 'scale(1) translateY(0)';
+          setTimeout(() => { t.style.transform = 'scale(1) translateY(0)'; }, 200);
         });
         editor.setModel(models[index]);
         lintLuaCode(models[index]);
@@ -941,6 +939,11 @@
           URL.revokeObjectURL(url);
         }
       }
+
+      // Добавление обработчика для кнопки "+"
+      addTabButton.addEventListener('click', () => {
+        createTab();
+      });
 
       // Панель поиска
       const searchPanel = document.getElementById('searchPanel');
