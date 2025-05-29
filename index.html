@@ -5,129 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Super Enhanced CattyX Executor Pro Max Ultra</title>
   <style>
-    /* Определение CSS-переменных для тем */
+    /* Определение CSS-переменных для темы */
     :root {
-      /* Тема Purple (основная) */
-      --body-bg: linear-gradient(145deg, #0d0d0d, #2a0033, #1e0033, #000000);
-      --tabs-bg: linear-gradient(to right, #330066, #1e0033);
-      --tabs-border: #5e00a5;
-      --tab-bg: linear-gradient(to bottom, #2e004e, #1a001f);
-      --tab-active-bg: linear-gradient(to bottom, #5c00a5, #30004f);
-      --tab-border: #5e00a5;
-      --tab-text: #ccc;
-      --tab-active-text: white;
-      --add-tab-bg: linear-gradient(to right, #4b0082, #8000ff);
-      --add-tab-hover-bg: linear-gradient(to right, #6a00ff, #9c33ff);
-      --editor-bg: linear-gradient(135deg, #1a001f, #1e0033);
-      --panel-bg: #2e004e;
-      --panel-border: #5e00a5;
-      --panel-button-bg: #4b0082;
-      --panel-button-hover-bg: #6a00ff;
-      --panel-input-bg: #1a001f;
-    }
-
-    /* Тема Blue */
-    [data-theme="blue"] {
-      --body-bg: linear-gradient(145deg, #0a1c2b, #1e3a8a, #1e40af, #0d1117);
-      --tabs-bg: linear-gradient(to right, #1e40af, #1e3a8a);
-      --tabs-border: #3b82f6;
-      --tab-bg: linear-gradient(to bottom, #1e3a8a, #0a1c2b);
-      --tab-active-bg: linear-gradient(to bottom, #3b82f6, #1e40af);
-      --tab-border: #3b82f6;
-      --tab-text: #bfdbfe;
-      --tab-active-text: white;
-      --add-tab-bg: linear-gradient(to right, #1d4ed8, #3b82f6);
-      --add-tab-hover-bg: linear-gradient(to right, #2563eb, #60a5fa);
-      --editor-bg: linear-gradient(135deg, #0a1c2b, #1e3a8a);
-      --panel-bg: #1e3a8a;
-      --panel-border: #3b82f6;
-      --panel-button-bg: #1d4ed8;
-      --panel-button-hover-bg: #2563eb;
-      --panel-input-bg: #0a1c2b;
-    }
-
-    /* Тема Red */
-    [data-theme="red"] {
-      --body-bg: linear-gradient(145deg, #2d0000, #7f1d1d, #991b1b, #1a0000);
-      --tabs-bg: linear-gradient(to right, #991b1b, #7f1d1d);
-      --tabs-border: #ef4444;
-      --tab-bg: linear-gradient(to bottom, #7f1d1d, #2d0000);
-      --tab-active-bg: linear-gradient(to bottom, #ef4444, #991b1b);
-      --tab-border: #ef4444;
-      --tab-text: #fecaca;
-      --tab-active-text: white;
-      --add-tab-bg: linear-gradient(to right, #b91c1c, #ef4444);
-      --add-tab-hover-bg: linear-gradient(to right, #dc2626, #f87171);
-      --editor-bg: linear-gradient(135deg, #2d0000, #7f1d1d);
-      --panel-bg: #7f1d1d;
-      --panel-border: #ef4444;
-      --panel-button-bg: #b91c1c;
-      --panel-button-hover-bg: #dc2626;
-      --panel-input-bg: #2d0000;
-    }
-
-    /* Тема Green */
-    [data-theme="green"] {
-      --body-bg: linear-gradient(145deg, #022c22, #166534, #15803d, #052e16);
-      --tabs-bg: linear-gradient(to right, #15803d, #166534);
-      --tabs-border: #22c55e;
-      --tab-bg: linear-gradient(to bottom, #166534, #022c22);
-      --tab-active-bg: linear-gradient(to bottom, #22c55e, #15803d);
-      --tab-border: #22c55e;
-      --tab-text: #bbf7d0;
-      --tab-active-text: white;
-      --add-tab-bg: linear-gradient(to right, #15803d, #22c55e);
-      --add-tab-hover-bg: linear-gradient(to right, #16a34a, #4ade80);
-      --editor-bg: linear-gradient(135deg, #022c22, #166534);
-      --panel-bg: #166534;
-      --panel-border: #22c55e;
-      --panel-button-bg: #15803d;
-      --panel-button-hover-bg: #16a34a;
-      --panel-input-bg: #022c22;
-    }
-
-    /* Тема Cyberpunk */
-    [data-theme="cyberpunk"] {
-      --body-bg: linear-gradient(145deg, #1a0f26, #6b21a8, #7c3aed, #0f172a);
-      --tabs-bg: linear-gradient(to right, #7c3aed, #6b21a8);
-      --tabs-border: #a855f7;
-      --tab-bg: linear-gradient(to bottom, #6b21a8, #1a0f26);
-      --tab-active-bg: linear-gradient(to bottom, #a855f7, #7c3aed);
-      --tab-border: #a855f7;
-      --tab-text: #e9d5ff;
-      --tab-active-text: white;
-      --add-tab-bg: linear-gradient(to right, #7c3aed, #a855f7);
-      --add-tab-hover-bg: linear-gradient(to right, #9333ea, #c084fc);
-      --editor-bg: linear-gradient(135deg, #1a0f26, #6b21a8);
-      --panel-bg: #6b21a8;
-      --panel-border: #a855f7;
-      --panel-button-bg: #7c3aed;
-      --panel-button-hover-bg: #9333ea;
-      --panel-input-bg: #1a0f26;
-    }
-
-    /* Тема Pastel */
-    [data-theme="pastel"] {
-      --body-bg: linear-gradient(145deg, #fef3c7, #fce7f3, #e9d5ff, #ccfbf1);
-      --tabs-bg: linear-gradient(to right, #e9d5ff, #fce7f3);
-      --tabs-border: #a5b4fc;
-      --tab-bg: linear-gradient(to bottom, #fce7f3, #fef3c7);
-      --tab-active-bg: linear-gradient(to bottom, #a5b4fc, #e9d5ff);
-      --tab-border: #a5b4fc;
-      --tab-text: #4b5563;
-      --tab-active-text: #1f2937;
-      --add-tab-bg: linear-gradient(to right, #e9d5ff, #a5b4fc);
-      --add-tab-hover-bg: linear-gradient(to right, #c7d2fe, #818cf8);
-      --editor-bg: linear-gradient(135deg, #fef3c7, #fce7f3);
-      --panel-bg: #fce7f3;
-      --panel-border: #a5b4fc;
-      --panel-button-bg: #e9d5ff;
-      --panel-button-hover-bg: #c7d2fe;
-      --panel-input-bg: #fef3c7;
-    }
-
-    /* Тема Dark */
-    [data-theme="dark"] {
       --body-bg: linear-gradient(145deg, #111827, #1f2937, #374151, #0f172a);
       --tabs-bg: linear-gradient(to right, #374151, #1f2937);
       --tabs-border: #4b5563;
@@ -138,112 +17,12 @@
       --tab-active-text: white;
       --add-tab-bg: linear-gradient(to right, #374151, #4b5563);
       --add-tab-hover-bg: linear-gradient(to right, #4b5563, #6b7280);
-      --editor-bg: linear-gradient(135deg, #111827, #1f2937);
+      --editor-bg:Sy linear-gradient(135deg, #0A0F1A, #141C29);
       --panel-bg: #1f2937;
       --panel-border: #4b5563;
       --panel-button-bg: #374151;
       --panel-button-hover-bg: #4b5563;
       --panel-input-bg: #111827;
-    }
-
-    /* Тема Light */
-    [data-theme="light"] {
-      --body-bg: linear-gradient(145deg, #f3f4f6, #e5e7eb, #d1d5db, #f9fafb);
-      --tabs-bg: linear-gradient(to right, #d1d5db, #e5e7eb);
-      --tabs-border: #9ca3af;
-      --tab-bg: linear-gradient(to bottom, #e5e7eb, #f3f4f6);
-      --tab-active-bg: linear-gradient(to bottom, #9ca3af, #d1d5db);
-      --tab-border: #9ca3af;
-      --tab-text: #374151;
-      --tab-active-text: #111827;
-      --add-tab-bg: linear-gradient(to right, #d1d5db, #9ca3af);
-      --add-tab-hover-bg: linear-gradient(to right, #9ca3af, #6b7280);
-      --editor-bg: linear-gradient(135deg, #f3f4f6, #e5e7eb);
-      --panel-bg: #e5e7eb;
-      --panel-border: #9ca3af;
-      --panel-button-bg: #d1d5db;
-      --panel-button-hover-bg: #9ca3af;
-      --panel-input-bg: #f3f4f6;
-    }
-
-    /* Тема Neon */
-    [data-theme="neon"] {
-      --body-bg: linear-gradient(145deg, #0f172a, #db2777, #8b5cf6, #0f172a);
-      --tabs-bg: linear-gradient(to right, #8b5cf6, #db2777);
-      --tabs-border: #ec4899;
-      --tab-bg: linear-gradient(to bottom, #db2777, #0f172a);
-      --tab-active-bg: linear-gradient(to bottom, #ec4899, #8b5cf6);
-      --tab-border: #ec4899;
-      --tab-text: #f9a8d4;
-      --tab-active-text: white;
-      --add-tab-bg: linear-gradient(to right, #8b5cf6, #ec4899);
-      --add-tab-hover-bg: linear-gradient(to right, #a855f7, #f472b6);
-      --editor-bg: linear-gradient(135deg, #0f172a, #db2777);
-      --panel-bg: #db2777;
-      --panel-border: #ec4899;
-      --panel-button-bg: #8b5cf6;
-      --panel-button-hover-bg: #a855f7;
-      --panel-input-bg: #0f172a;
-    }
-
-    /* Тема Sunset */
-    [data-theme="sunset"] {
-      --body-bg: linear-gradient(145deg, #7c2d12, #ea580c, #f97316, #431407);
-      --tabs-bg: linear-gradient(to right, #f97316, #ea580c);
-      --tabs-border: #fb923c;
-      --tab-bg: linear-gradient(to bottom, #ea580c, #7c2d12);
-      --tab-active-bg: linear-gradient(to bottom, #fb923c, #f97316);
-      --tab-border: #fb923c;
-      --tab-text: #fed7aa;
-      --tab-active-text: white;
-      --add-tab-bg: linear-gradient(to right, #ea580c, #fb923c);
-      --add-tab-hover-bg: linear-gradient(to right, #f97316, #fdba74);
-      --editor-bg: linear-gradient(135deg, #7c2d12, #ea580c);
-      --panel-bg: #ea580c;
-      --panel-border: #fb923c;
-      --panel-button-bg: #ea580c;
-      --panel-button-hover-bg: #f97316;
-      --panel-input-bg: #7c2d12;
-    }
-
-    /* Тема Ocean */
-    [data-theme="ocean"] {
-      --body-bg: linear-gradient(145deg, #083344, #164e63, #155e75, #042f2e);
-      --tabs-bg: linear-gradient(to right, #155e75, #164e63);
-      --tabs-border: #3b82f6;
-      --tab-bg: linear-gradient(to bottom, #164e63, #083344);
-      --tab-active-bg: linear-gradient(to bottom, #3b82f6, #155e75);
-      --tab-border: #3b82f6;
-      --tab-text: #bfdbfe;
-      --tab-active-text: white;
-      --add-tab-bg: linear-gradient(to right, #164e63, #3b82f6);
-      --add-tab-hover-bg: linear-gradient(to right, #1d4ed8, #60a5fa);
-      --editor-bg: linear-gradient(135deg, #083344, #164e63);
-      --panel-bg: #164e63;
-      --panel-border: #3b82f6;
-      --panel-button-bg: #164e63;
-      --panel-button-hover-bg: #1d4ed8;
-      --panel-input-bg: #083344;
-    }
-
-    /* Тема Forest */
-    [data-theme="forest"] {
-      --body-bg: linear-gradient(145deg, #052e16, #14532d, #166534, #022c22);
-      --tabs-bg: linear-gradient(to right, #166534, #14532d);
-      --tabs-border: #22c55e;
-      --tab-bg: linear-gradient(to bottom, #14532d, #052e16);
-      --tab-active-bg: linear-gradient(to bottom, #22c55e, #166534);
-      --tab-border: #22c55e;
-      --tab-text: #bbf7d0;
-      --tab-active-text: white;
-      --add-tab-bg: linear-gradient(to right, #14532d, #22c55e);
-      --add-tab-hover-bg: linear-gradient(to right, #16a34a, #4ade80);
-      --editor-bg: linear-gradient(135deg, #052e16, #14532d);
-      --panel-bg: #14532d;
-      --panel-border: #22c55e;
-      --panel-button-bg: #14532d;
-      --panel-button-hover-bg: #16a34a;
-      --panel-input-bg: #052e16;
     }
 
     /* Основные стили для тела страницы */
@@ -288,7 +67,8 @@
       align-items: center;
       font-size: 14px;
       transition: all 0.3s ease;
-      opacity: 0.8;
+      opacity: 0;
+      transform: scale(0.95);
     }
 
     /* Стили для активной вкладки */
@@ -297,6 +77,7 @@
       color: var(--tab-active-text);
       border-bottom: none;
       opacity: 1;
+      transform: scale(1);
     }
 
     /* Стили для заголовка вкладки */
@@ -312,7 +93,7 @@
       margin-left: 8px;
       color: var(--tab-text);
       cursor: pointer;
-      font-weight: bold;
+      font-weight -weight: bold;
       transition: color 0.2s ease;
     }
 
@@ -415,44 +196,6 @@
       background: var(--panel-button-hover-bg);
     }
 
-    /* Стили для панели настроек */
-    #settingsPanel {
-      position: absolute;
-      top: 50px;
-      left: 20px;
-      background: var(--panel-bg);
-      border: 1px solid var(--panel-border);
-      border-radius: 8px;
-      padding: 10px;
-      display: none;
-      z-index: 20;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    #settingsPanel select,
-    #settingsPanel input {
-      background: var(--panel-input-bg);
-      border: 1px solid var(--panel-border);
-      color: var(--tab-active-text);
-      padding: 5px;
-      margin: 5px 0;
-      border-radius: 4px;
-      width: 150px;
-    }
-
-    #settingsPanel button {
-      background: var(--panel-button-bg);
-      color: var(--tab-active-text);
-      border: none;
-      padding: 5px 10px;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    #settingsPanel button:hover {
-      background: var(--panel-button-hover-bg);
-    }
-
     /* Стили для панели истории изменений */
     #historyPanel {
       position: absolute;
@@ -500,11 +243,6 @@
     #historyPanel button:hover {
       background: var(--panel-button-hover-bg);
     }
-
-    /* Стили для кнопки загрузки файла */
-    #fileInput {
-      display: none;
-    }
   </style>
 </head>
 <body>
@@ -512,10 +250,7 @@
   <div id="tabs">
     <button id="addTab">+</button>
     <button id="openSearch" style="margin-left: 10px; background: var(--panel-button-bg); color: var(--tab-active-text); padding: 6px 12px; border-radius: 8px;">Search</button>
-    <button id="openSettings" style="margin-left: 10px; background: var(--panel-button-bg); color: var(--tab-active-text); padding: 6px 12px; border-radius: 8px;">Settings</button>
     <button id="openHistory" style="margin-left: 10px; background: var(--panel-button-bg); color: var(--tab-active-text); padding: 6px 12px; border-radius: 8px;">History</button>
-    <label for="fileInput" style="margin-left: 10px; background: var(--panel-button-bg); color: var(--tab-active-text); padding: 6px 12px; border-radius: 8px; cursor: pointer;">Load Script</label>
-    <input type="file" id="fileInput" accept=".lua,.txt" />
   </div>
   <!-- Контейнер редактора -->
   <div id="editor"></div>
@@ -523,36 +258,10 @@
   <div id="searchPanel">
     <input type="text" id="searchInput" placeholder="Search...">
     <input type="text" id="replaceInput" placeholder="Replace...">
-    <button id="findNext">Find Next</button>
+    <button id="findNext">Find Next</button button>
     <button id="replace">Replace</button>
     <button id="replaceAll">Replace All</button>
     <button id="closeSearch">Close</button>
-  </div>
-  <!-- Панель настроек -->
-  <div id="settingsPanel">
-    <div>
-      <label>Theme:</label>
-      <select id="themeSelect">
-        <option value="purple">Purple</option>
-        <option value="blue">Blue</option>
-        <option value="red">Red</option>
-        <option value="green">Green</option>
-        <option value="cyberpunk">Cyberpunk</option>
-        <option value="pastel">Pastel</option>
-        <option value="dark">Dark</option>
-        <option value="light">Light</option>
-        <option value="neon">Neon</option>
-        <option value="sunset">Sunset</option>
-        <option value="ocean">Ocean</option>
-        <option value="forest">Forest</option>
-      </select>
-    </div>
-    <div>
-      <label>Font Size:</label>
-      <input type="number" id="fontSizeInput" value="14" min="8" max="24">
-    </div>
-    <button id="applySettings">Apply</button>
-    <button id="closeSettings">Close</button>
   </div>
   <!-- Панель истории изменений -->
   <div id="historyPanel">
@@ -570,291 +279,291 @@
       // Списки автодополнения для Roblox API
       // Классы Roblox
       const robloxClasses = [
-        'Instance', // Базовый класс всех объектов
-        'Part', // Физический объект в 3D-мире
-        'Model', // Коллекция объектов
-        'Player', // Представляет игрока
-        'Workspace', // Контейнер 3D-мира
-        'Camera', // Управление камерой
-        'Lighting', // Управление освещением
-        'ReplicatedStorage', // Хранилище для реплицируемых объектов
-        'ServerScriptService', // Серверные скрипты
-        'ServerStorage', // Хранилище серверных объектов
-        'StarterPlayer', // Настройки игрока
-        'StarterPack', // Инвентарь игрока
-        'StarterGui', // Интерфейс игрока
-        'SoundService', // Управление звуком
-        'Chat', // Система чата
-        'Players', // Управление игроками
-        'Teams', // Управление командами
-        'Team', // Объект команды
-        'Humanoid', // Управление персонажем
-        'BodyVelocity', // Управление скоростью
-        'BodyAngularVelocity', // Управление угловой скоростью
-        'BodyForce', // Применение силы
-        'BodyGyro', // Управление ориентацией
-        'BodyPosition', // Управление позицией
-        'BodyThrust', // Применение тяги
-        'ClickDetector', // Детектор кликов
-        'ProximityPrompt', // Подсказки взаимодействия
-        'Tool', // Инструмент игрока
-        'Weld', // Соединение объектов
-        'WeldConstraint', // Ограничение соединения
-        'Motor6D', // Анимационное соединение
-        'Attachment', // Точка крепления
-        'Bone', // Кость для анимаций
-        'Animation', // Анимация
-        'AnimationTrack', // Трек анимации
-        'Animator', // Управление анимациями
-        'BasePart', // Базовый физический объект
-        'PartOperation', // Операция с частями
-        'UnionOperation', // Объединение частей
-        'NegateOperation', // Отрицание частей
-        'MeshPart', // Сеточный объект
-        'SurfaceAppearance', // Внешний вид поверхности
-        'Decal', // Наклейка
-        'Texture', // Текстура
-        'ParticleEmitter', // Эмиттер частиц
-        'Beam', // Луч
-        'Trail', // След
-        'Sparkles', // Искры
-        'Smoke', // Дым
-        'Fire', // Огонь
-        'Explosion', // Взрыв
-        'PointLight', // Точечный свет
-        'SpotLight', // Прожектор
-        'SurfaceLight', // Поверхностный свет
-        'Folder', // Папка для организации
-        'ModuleScript', // Модульный скрипт
-        'Script', // Обычный скрипт
-        'LocalScript', // Локальный скрипт
-        'RemoteEvent', // Удаленное событие
-        'RemoteFunction', // Удаленная функция
-        'BindableEvent', // Привязываемое событие
-        'BindableFunction', // Привязываемая функция
-        'Actor', // Актер для параллелизма
-        'Configuration', // Конфигурация
-        'Dialog', // Диалог NPC
-        'DialogChoice', // Вариант диалога
-        'Sound', // Звуковой объект
-        'SoundGroup', // Группа звуков
-        'ChorusSoundEffect', // Эффект хора
-        'CompressorSoundEffect', // Эффект компрессора
-        'DistortionSoundEffect', // Эффект искажения
-        'EchoSoundEffect', // Эффект эха
-        'EqualizerSoundEffect', // Эффект эквалайзера
-        'FlangeSoundEffect', // Эффект фланжера
-        'PitchShiftSoundEffect', // Эффект изменения высоты
-        'ReverbSoundEffect', // Эффект реверберации
-        'TremoloSoundEffect', // Эффект тремоло
-        'PathfindingService', // Сервис поиска пути
-        'Path', // Путь
-        'PathfindingModifier', // Модификатор пути
-        'Terrain', // Ландшафт
-        'TerrainRegion', // Регион ландшафта
-        'Water', // Вода
-        'Clouds', // Облака
-        'Sky', // Небо
-        'Atmosphere', // Атмосфера
-        'PostEffect', // Пост-эффект
-        'BloomEffect', // Эффект свечения
-        'BlurEffect', // Эффект размытия
-        'ColorCorrectionEffect', // Эффект цветокоррекции
-        'SunRaysEffect', // Эффект солнечных лучей
-        'GuiService', // Сервис интерфейса
-        'GuiObject', // Базовый объект интерфейса
-        'Frame', // Рамка интерфейса
-        'ImageButton', // Кнопка с изображением
-        'ImageLabel', // Метка с изображением
-        'TextButton', // Текстовая кнопка
-        'TextLabel', // Текстовая метка
-        'TextBox', // Текстовое поле
-        'ViewportFrame', // Рамка вида
-        'ArcHandles', // Дуги для редактирования
-        'Handles', // Ручки для редактирования
-        'Selection', // Выделение объектов
-        'AdService', // Сервис рекламы
-        'AnalyticsService', // Сервис аналитики
-        'BadgeService', // Сервис значков
-        'CollectionService', // Управление коллекциями
-        'DataStoreService', // Хранилище данных
-        'Debris', // Удаление объектов
-        'GamePassService', // Сервис игровых пропусков
-        'InsertService', // Вставка объектов
-        'MarketplaceService', // Сервис магазина
-        'PhysicsService', // Сервис физики
-        'PolicyService', // Сервис политики
-        'RunService', // Сервис выполнения
-        'TeleportService', // Сервис телепортации
-        'TextService', // Сервис текста
-        'TweenService', // Сервис анимаций
-        'UserInputService', // Сервис ввода
-        'VRService' // Сервис виртуальной реальности
+        'Instance',
+        'Part',
+        'Model',
+        'Player',
+        'Workspace',
+        'Camera',
+        'Lighting',
+        'ReplicatedStorage',
+        'ServerScriptService',
+        'ServerStorage',
+        'StarterPlayer',
+        'StarterPack',
+        'StarterGui',
+        'SoundService',
+        'Chat',
+        'Players',
+        'Teams',
+        'Team',
+        'Humanoid',
+        'BodyVelocity',
+        'BodyAngularVelocity',
+        'BodyForce',
+        'BodyGyro',
+        'BodyPosition',
+        'BodyThrust',
+        'ClickDetector',
+        'ProximityPrompt',
+        'Tool',
+        'Weld',
+        'WeldConstraint',
+        'Motor6D',
+        'Attachment',
+        'Bone',
+        'Animation',
+        'AnimationTrack',
+        'Animator',
+        'BasePart',
+        'PartOperation',
+        'UnionOperation',
+        'NegateOperation',
+        'MeshPart',
+        'SurfaceAppearance',
+        'Decal',
+        'Texture',
+        'ParticleEmitter',
+        'Beam',
+        'Trail',
+        'Sparkles',
+        'Smoke',
+        'Fire',
+        'Explosion',
+        'PointLight',
+        'SpotLight',
+        'SurfaceLight',
+        'Folder',
+        'ModuleScript',
+        'Script',
+        'LocalScript',
+        'RemoteEvent',
+        'RemoteFunction',
+        'BindableEvent',
+        'BindableFunction',
+        'Actor',
+        'Configuration',
+        'Dialog',
+        'DialogChoice',
+        'Sound',
+        'SoundGroup',
+        'ChorusSoundEffect',
+        'CompressorSoundEffect',
+        'DistortionSoundEffect',
+        'EchoSoundEffect',
+        'EqualizerSoundEffect',
+        'FlangeSoundEffect',
+        'PitchShiftSoundEffect',
+        'ReverbSoundEffect',
+        'TremoloSoundEffect',
+        'PathfindingService',
+        'Path',
+        'PathfindingModifier',
+        'Terrain',
+        'TerrainRegion',
+        'Water',
+        'Clouds',
+        'Sky',
+        'Atmosphere',
+        'PostEffect',
+        'BloomEffect',
+        'BlurEffect',
+        'ColorCorrectionEffect',
+        'SunRaysEffect',
+        'GuiService',
+        'GuiObject',
+        'Frame',
+        'ImageButton',
+        'ImageLabel',
+        'TextButton',
+        'TextLabel',
+        'TextBox',
+        'ViewportFrame',
+        'ArcHandles',
+        'Handles',
+        'Selection',
+        'AdService',
+        'AnalyticsService',
+        'BadgeService',
+        'CollectionService',
+        'DataStoreService',
+        'Debris',
+        'GamePassService',
+        'InsertService',
+        'MarketplaceService',
+        'PhysicsService',
+        'PolicyService',
+        'RunService',
+        'TeleportService',
+        'TextService',
+        'TweenService',
+        'UserInputService',
+        'VRService'
       ];
 
       // Глобальные функции Roblox
       const robloxFunctions = [
-        'print', // Вывод в консоль
-        'warn', // Предупреждение в консоли
-        'error', // Ошибка в консоли
-        'wait', // Пауза выполнения
-        'tick', // Текущее время
-        'time', // Время с начала игры
-        'os.time', // Системное время
-        'os.date', // Форматированная дата
-        'math.abs', // Абсолютное значение
-        'math.acos', // Арккосинус
-        'math.asin', // Арксинус
-        'math.atan', // Арктангенс
-        'math.atan2', // Арктангенс двух аргументов
-        'math.ceil', // Округление вверх
-        'math.clamp', // Ограничение значения
-        'math.cos', // Косинус
-        'math.cosh', // Гиперболический косинус
-        'math.deg', // Радианы в градусы
-        'math.exp', // Экспонента
-        'math.floor', // Округление вниз
-        'math.fmod', // Модуль деления
-        'math.frexp', // Разложение числа
-        'math.ldexp', // Обратное разложение
-        'math.log', // Натуральный логарифм
-        'math.log10', // Десятичный логарифм
-        'math.max', // Максимум
-        'math.min', // Минимум
-        'math.modf', // Целая и дробная части
-        'math.noise', // Шум Перлина
-        'math.pow', // Степень
-        'math.rad', // Градусы в радианы
-        'math.random', // Случайное число
-        'math.randomseed', // Инициализация генератора
-        'math.sign', // Знак числа
-        'math.sin', // Синус
-        'math.sinh', // Гиперболический синус
-        'math.sqrt', // Квадратный корень
-        'math.tan', // Тангенс
-        'math.tanh', // Гиперболический тангенс
-        'string.byte', // Код символа
-        'string.char', // Символ из кода
-        'string.find', // Поиск подстроки
-        'string.format', // Форматирование строки
-        'string.gsub', // Замена в строке
-        'string.len', // Длина строки
-        'string.lower', // Нижний регистр
-        'string.match', // Поиск совпадений
-        'string.rep', // Повтор строки
-        'string.reverse', // Реверс строки
-        'string.sub', // Подстрока
-        'string.upper', // Верхний регистр
-        'table.concat', // Объединение таблицы
-        'table.insert', // Вставка в таблицу
-        'table.remove', // Удаление из таблицы
-        'table.sort', // Сортировка таблицы
-        'game:GetService', // Получение сервиса
-        'game:FindFirstChild', // Поиск первого потомка
-        'game:GetChildren', // Получение всех потомков
-        'game:WaitForChild', // Ожидание потомка
-        'Instance.new', // Создание объекта
-        'CFrame.new', // Новый CFrame
-        'Vector3.new', // Новый Vector3
-        'Vector2.new', // Новый Vector2
-        'UDim2.new', // Новый UDim2
-        'Color3.new', // Новый Color3
-        'BrickColor.new', // Новый BrickColor
-        'Enum.Material.new', // Создание материала
-        'Enum.KeyCode.new', // Создание клавиши
-        'game:GetObjects', // Получение объектов
-        'game:Clone', // Клонирование объекта
-        'game:Destroy', // Уничтожение объекта
-        'game:IsA', // Проверка типа
-        'game:GetDescendants', // Получение всех потомков
-        'workspace:FindPartOnRay', // Поиск части по лучу
-        'workspace:FindPartsInRegion', // Поиск частей в регионе
-        'UserInputService:IsKeyDown', // Проверка нажатия клавиши
-        'UserInputService:IsMouseButtonPressed', // Проверка нажатия мыши
-        'TweenService:Create', // Создание твина
-        'RunService:BindToRenderStep', // Привязка к рендерингу
-        'RunService:UnbindFromRenderStep' // Отвязка от рендеринга
+        'print',
+        'warn',
+        'error',
+        'wait',
+        'tick',
+        'time',
+        'os.time',
+        'os.date',
+        'math.abs',
+        'math.acos',
+        'math.asin',
+        'math.atan',
+        'math.atan2',
+        'math.ceil',
+        'math.clamp',
+        'math.cos',
+        'math.cosh',
+        'math.deg',
+        'math.exp',
+        'math.floor',
+        'math.fmod',
+        'math.frexp',
+        'math.ldexp',
+        'math.log',
+        'math.log10',
+        'math.max',
+        'math.min',
+        'math.modf',
+        'math.noise',
+        'math.pow',
+        'math.rad',
+        'math.random',
+        'math.randomseed',
+        'math.sign',
+        'math.sin',
+        'math.sinh',
+        'math.sqrt',
+        'math.tan',
+        'math.tanh',
+        'string.byte',
+        'string.char',
+        'string.find',
+        'string.format',
+        'string.gsub',
+        'string.len',
+        'string.lower',
+        'string.match',
+        'string.rep',
+        'string.reverse',
+        'string.sub',
+        'string.upper',
+        'table.concat',
+        'table.insert',
+        'table.remove',
+        'table.sort',
+        'game:GetService',
+        'game:FindFirstChild',
+        'game:GetChildren',
+        'game:WaitForChild',
+        'Instance.new',
+        'CFrame.new',
+        'Vector3.new',
+        'Vector2.new',
+        'UDim2.new',
+        'Color3.new',
+        'BrickColor.new',
+        'Enum.Material.new',
+        'Enum.KeyCode.new',
+        'game:GetObjects',
+        'game:Clone',
+        'game:Destroy',
+        'game:IsA',
+        'game:GetDescendants',
+        'workspace:FindPartOnRay',
+        'workspace:FindPartsInRegion',
+        'UserInputService:IsKeyDown',
+        'UserInputService:IsMouseButtonPressed',
+        'TweenService:Create',
+        'RunService:BindToRenderStep',
+        'RunService:UnbindFromRenderStep'
       ];
 
       // Перечисления Roblox
       const robloxEnums = [
-        'Enum.Material.Plastic', // Материал: пластик
-        'Enum.Material.Wood', // Материал: дерево
-        'Enum.Material.Metal', // Материал: металл
-        'Enum.Material.Glass', // Материал: стекло
-        'Enum.Material.Concrete', // Материал: бетон
-        'Enum.Material.Brick', // Материал: кирпич
-        'Enum.Material.Granite', // Материал: гранит
-        'Enum.Material.Marble', // Материал: мрамор
-        'Enum.Material.Slate', // Материал: сланец
-        'Enum.Material.Sand', // Материал: песок
-        'Enum.Material.Fabric', // Материал: ткань
-        'Enum.Material.SmoothPlastic', // Материал: гладкий пластик
-        'Enum.Material.Neon', // Материал: неон
-        'Enum.Material.Cobblestone', // Материал: булыжник
-        'Enum.Material.WoodPlanks', // Материал: деревянные доски
-        'Enum.KeyCode.Space', // Клавиша: пробел
-        'Enum.KeyCode.Left', // Клавиша: влево
-        'Enum.KeyCode.Right', // Клавиша: вправо
-        'Enum.KeyCode.Up', // Клавиша: вверх
-        'Enum.KeyCode.Down', // Клавиша: вниз
-        'Enum.KeyCode.W', // Клавиша: W
-        'Enum.KeyCode.A', // Клавиша: A
-        'Enum.KeyCode.S', // Клавиша: S
-        'Enum.KeyCode.D', // Клавиша: D
-        'Enum.KeyCode.E', // Клавиша: E
-        'Enum.KeyCode.Q', // Клавиша: Q
-        'Enum.KeyCode.R', // Клавиша: R
-        'Enum.KeyCode.F', // Клавиша: F
-        'Enum.KeyCode.Z', // Клавиша: Z
-        'Enum.KeyCode.X', // Клавиша: X
-        'Enum.UserInputType.MouseButton1', // Ввод: левая кнопка мыши
-        'Enum.UserInputType.MouseButton2', // Ввод: правая кнопка мыши
-        'Enum.UserInputType.MouseWheel', // Ввод: колесо мыши
-        'Enum.UserInputType.Keyboard', // Ввод: клавиатура
-        'Enum.UserInputType.Gamepad1', // Ввод: геймпад
-        'Enum.UserInputType.Touch', // Ввод: касание
-        'Enum.UserInputType.MouseMovement', // Ввод: движение мыши
-        'Enum.ConnectionState.Connected', // Состояние: подключено
-        'Enum.ConnectionState.Disconnected', // Состояние: отключено
-        'Enum.RenderPriority.Camera', // Приоритет: камера
-        'Enum.RenderPriority.Input', // Приоритет: ввод
-        'Enum.RenderPriority.Update', // Приоритет: обновление
-        'Enum.NormalId.Top', // Нормаль: верх
-        'Enum.NormalId.Bottom', // Нормаль: низ
-        'Enum.NormalId.Left', // Нормаль: лево
-        'Enum.NormalId.Right', // Нормаль: право
-        'Enum.NormalId.Front', // Нормаль: перед
-        'Enum.NormalId.Back', // Нормаль: зад
-        'Enum.Font.Roboto', // Шрифт: Roboto
-        'Enum.Font.SourceSans', // Шрифт: SourceSans
-        'Enum.Font.Arial', // Шрифт: Arial
-        'Enum.Font.Code', // Шрифт: Code
-        'Enum.Font.Legacy', // Шрифт: Legacy
-        'Enum.Font.Gotham', // Шрифт: Gotham
-        'Enum.EasingStyle.Sine', // Стиль анимации: синус
-        'Enum.EasingStyle.Quad', // Стиль анимации: квадратичный
-        'Enum.EasingStyle.Cubic', // Стиль анимации: кубический
-        'Enum.EasingStyle.Quart', // Стиль анимации: квартичный
-        'Enum.EasingStyle.Quint', // Стиль анимации: квинтичный
-        'Enum.EasingStyle.Exponential', // Стиль анимации: экспоненциальный
-        'Enum.EasingStyle.Circular', // Стиль анимации: круговой
-        'Enum.EasingStyle.Bounce', // Стиль анимации: отскок
-        'Enum.EasingStyle.Back', // Стиль анимации: возврат
-        'Enum.EasingStyle.Elastic', // Стиль анимации: эластичный
-        'Enum.ActuatorType.Motor', // Тип привода: мотор
-        'Enum.ActuatorType.Servo', // Тип привода: серво
-        'Enum.ActuatorType.None', // Тип привода: отсутствует
-        'Enum.CollisionFidelity.Default', // Точность столкновений: стандарт
-        'Enum.CollisionFidelity.Precise', // Точность столкновений: точная
-        'Enum.CollisionFidelity.Hull', // Точность столкновений: оболочка
-        'Enum.Anchored.True', // Фиксация: включена
-        'Enum.Anchored.False', // Фиксация: выключена
-        'Enum.SurfaceType.Smooth', // Тип поверхности: гладкая
-        'Enum.SurfaceType.Glue', // Тип поверхности: клей
-        'Enum.SurfaceType.Weld', // Тип поверхности: сварка
-        'Enum.SurfaceType.Hinge', // Тип поверхности: шарнир
-        'Enum.SurfaceType.Motor', // Тип поверхности: мотор
+        'Enum.Material.Plastic',
+        'Enum.Material.Wood',
+        'Enum.Material.Metal',
+        'Enum.Material.Glass',
+        'Enum.Material.Concrete',
+        'Enum.Material.Brick',
+        'Enum.Material.Granite',
+        'Enum.Material.Marble',
+        'Enum.Material.Slate',
+        'Enum.Material.Sand',
+        'Enum.Material.Fabric',
+        'Enum.Material.SmoothPlastic',
+        'Enum.Material.Neon',
+        'Enum.Material.Cobblestone',
+        'Enum.Material.WoodPlanks',
+        'Enum.KeyCode.Space',
+        'Enum.KeyCode.Left',
+        'Enum.KeyCode.Right',
+        'Enum.KeyCode.Up',
+        'Enum.KeyCode.Down',
+        'Enum.KeyCode.W',
+        'Enum.KeyCode.A',
+        'Enum.KeyCode.S',
+        'Enum.KeyCode.D',
+        'Enum.KeyCode.E',
+        'Enum.KeyCode.Q',
+        'Enum.KeyCode.R',
+        'Enum.KeyCode.F',
+        'Enum.KeyCode.Z',
+        'Enum.KeyCode.X',
+        'Enum.UserInputType.MouseButton1',
+        'Enum.UserInputType.MouseButton2',
+        'Enum.UserInputType.MouseWheel',
+        'Enum.UserInputType.Keyboard',
+        'Enum.UserInputType.Gamepad1',
+        'Enum.UserInputType.Touch',
+        'Enum.UserInputType.MouseMovement',
+        'Enum.ConnectionState.Connected',
+        'Enum.ConnectionState.Disconnected',
+        'Enum.RenderPriority.Camera',
+        'Enum.RenderPriority.Input',
+        'Enum.RenderPriority.Update',
+        'Enum.NormalId.Top',
+        'Enum.NormalId.Bottom',
+        'Enum.NormalId.Left',
+        'Enum.NormalId.Right',
+        'Enum.NormalId.Front',
+        'Enum.NormalId.Back',
+        'Enum.Font.Roboto',
+        'Enum.Font.SourceSans',
+        'Enum.Font.Arial',
+        'Enum.Font.Code',
+        'Enum.Font.Legacy',
+        'Enum.Font.Gotham',
+        'Enum.EasingStyle.Sine',
+        'Enum.EasingStyle.Quad',
+        'Enum.EasingStyle.Cubic',
+        'Enum.EasingStyle.Quart',
+        'Enum.EasingStyle.Quint',
+        'Enum.EasingStyle.Exponential',
+        'Enum.EasingStyle.Circular',
+        'Enum.EasingStyle.Bounce',
+        'Enum.EasingStyle.Back',
+        'Enum.EasingStyle.Elastic',
+        'Enum.ActuatorType.Motor',
+        'Enum.ActuatorType.Servo',
+        'Enum.ActuatorType.None',
+        'Enum.CollisionFidelity.Default',
+        'Enum.CollisionFidelity.Precise',
+        'Enum.CollisionFidelity.Hull',
+        'Enum.Anchored.True',
+        'Enum.Anchored.False',
+        'Enum.SurfaceType.Smooth',
+        'Enum.SurfaceType.Glue',
+        'Enum.SurfaceType.Weld',
+        'Enum.SurfaceType.Hinge',
+        'Enum.SurfaceType.Motor'
       ];
 
       // Сниппеты кода для Roblox
@@ -943,16 +652,16 @@
         cursorBlinking: 'phase',
         cursorSmoothCaretAnimation: true,
         wordWrap: 'on',
-        minimap: { enabled: false }, // Отключение миникарты для производительности
-        renderWhitespace: 'none', // Отключение рендеринга пробелов
-        maxTokenizationLineLength: 10000, // Ограничение длины строки
-        scrollBeyondLastLine: false, // Отключение прокрутки за последнюю строку
-        folding: true, // Включение сворачивания кода
-        glyphMargin: true, // Включение полей для маркеров
-        lineNumbersMinChars: 3, // Минимальная ширина номеров строк
-        contextmenu: true, // Включение контекстного меню
-        tabSize: 2, // Размер табуляции
-        insertSpaces: true // Использование пробелов вместо табуляции
+        minimap: { enabled: false },
+        renderWhitespace: 'none',
+        maxTokenizationLineLength: 10000,
+        scrollBeyondLastLine: false,
+        folding: true,
+        glyphMargin: true,
+        lineNumbersMinChars: 3,
+        contextmenu: true,
+        tabSize: 2,
+        insertSpaces: true
       });
 
       // Регистрация провайдера автодополнения
@@ -968,7 +677,6 @@
           const word = model.getWordAtPosition(position);
           const suggestions = [];
 
-          // Контекстно-зависимые подсказки
           if (textUntilPosition.endsWith('game.')) {
             suggestions.push(
               { label: 'GetService', kind: monaco.languages.CompletionItemKind.Method, insertText: 'GetService("${1:service}")', insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet, detail: 'Gets a service by name' },
@@ -988,7 +696,6 @@
               });
             });
           } else {
-            // Общие классы
             robloxClasses.forEach(cls => {
               suggestions.push({
                 label: cls,
@@ -997,7 +704,6 @@
                 detail: robloxDocumentation[cls] || 'Roblox Class'
               });
             });
-            // Глобальные функции
             robloxFunctions.forEach(func => {
               suggestions.push({
                 label: func,
@@ -1007,7 +713,6 @@
                 detail: robloxDocumentation[func] || 'Roblox Function'
               });
             });
-            // Сниппеты
             robloxSnippets.forEach(snippet => {
               suggestions.push({
                 label: snippet.label,
@@ -1042,7 +747,6 @@
         const errors = [];
         const lines = code.split('\n');
         lines.forEach((line, index) => {
-          // Проверка на незакрытые скобки
           if (line.includes('(') && !line.includes(')')) {
             errors.push({
               severity: monaco.MarkerSeverity.Error,
@@ -1053,7 +757,6 @@
               endColumn: line.length + 1
             });
           }
-          // Проверка на использование устаревших функций
           if (line.includes('game.FindFirstChild')) {
             errors.push({
               severity: monaco.MarkerSeverity.Warning,
@@ -1064,7 +767,6 @@
               endColumn: line.length + 1
             });
           }
-          // Проверка на неправильное использование локальных переменных
           if (line.match(/^\s*local\s+[a-zA-Z_][a-zA-Z0-9_]*\s*=/) && !line.includes('=')) {
             errors.push({
               severity: monaco.MarkerSeverity.Error,
@@ -1143,8 +845,6 @@
 
         const tab = document.createElement('div');
         tab.className = 'tab';
-        tab.style.opacity = '0';
-        tab.style.transition = 'opacity 0.3s ease';
 
         const title = document.createElement('span');
         title.className = 'title';
@@ -1158,13 +858,17 @@
         tab.appendChild(closeBtn);
         tabsContainer.insertBefore(tab, addTabButton);
 
-        // Анимация появления вкладки
-        setTimeout(() => { tab.style.opacity = '1'; }, 10);
+        // Плавная анимация появления
+        setTimeout(() => {
+          tab.style.opacity = '1';
+          tab.style.transform = 'scale(1)';
+        }, 10);
 
         closeBtn.addEventListener('click', (e) => {
           e.stopPropagation();
           const index = Array.from(tabsContainer.children).indexOf(tab);
           tab.style.opacity = '0';
+          tab.style.transform = 'scale(0.95)';
           setTimeout(() => {
             tabsContainer.removeChild(tab);
             models.splice(index, 1);
@@ -1237,18 +941,6 @@
           URL.revokeObjectURL(url);
         }
       }
-
-      // Обработка загрузки файла
-      document.getElementById('fileInput').addEventListener('change', (e) => {
-        const file = e.target.files[0];
-        if (file) {
-          const reader = new FileReader();
-          reader.onload = (event) => {
-            createTab(file.name, event.target.result);
-          };
-          reader.readAsText(file);
-        }
-      });
 
       // Панель поиска
       const searchPanel = document.getElementById('searchPanel');
@@ -1333,36 +1025,6 @@
         searchInput.focus();
       });
 
-      // Панель настроек
-      const settingsPanel = document.getElementById('settingsPanel');
-      const themeSelect = document.getElementById('themeSelect');
-      const fontSizeInput = document.getElementById('fontSizeInput');
-      const applySettingsBtn = document.getElementById('applySettings');
-      const closeSettingsBtn = document.getElementById('closeSettings');
-
-      applySettingsBtn.addEventListener('click', () => {
-        const theme = themeSelect.value;
-        const fontSize = parseInt(fontSizeInput.value);
-        document.documentElement.setAttribute('data-theme', theme);
-        monaco.editor.setTheme(theme === 'light' ? 'vs' : theme === 'dark' ? 'vs-dark' : 'vs-dark');
-        editor.updateOptions({ fontSize: Math.max(8, Math.min(24, fontSize)) });
-        localStorage.setItem('editorTheme', theme);
-        localStorage.setItem('editorFontSize', fontSize);
-      });
-
-      closeSettingsBtn.addEventListener('click', () => {
-        settingsPanel.style.display = 'none';
-        editor.focus();
-      });
-
-      document.getElementById('openSettings').addEventListener('click', () => {
-        settingsPanel.style.display = 'block';
-        const savedTheme = localStorage.getItem('editorTheme') || 'purple';
-        const savedFontSize = localStorage.getItem('editorFontSize') || '14';
-        themeSelect.value = savedTheme;
-        fontSizeInput.value = savedFontSize;
-      });
-
       // Панель истории изменений
       const historyPanel = document.getElementById('historyPanel');
       const clearHistoryBtn = document.getElementById('clearHistory');
@@ -1427,10 +1089,6 @@
 
       // Инициализация редактора
       loadSavedTabs();
-
-      // Установка начальной темы
-      const savedTheme = localStorage.getItem('editorTheme') || 'purple';
-      document.documentElement.setAttribute('data-theme', savedTheme);
     });
   </script>
 </body>
