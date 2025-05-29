@@ -36,6 +36,7 @@
       color: white;
       overflow: hidden;
       position: relative;
+      cursor: none; /* Скрываем стандартный курсор */
     }
 
     /* Анимация градиента для фона */
@@ -257,11 +258,11 @@
 
     #glow {
       position: absolute;
-      width: 100px;
-      height: 100px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
-      background: rgba(138, 43, 226, 0.1); /* Прозрачный неоновый фиолетовый */
-      box-shadow: 0 0 20px 10px rgba(138, 43, 226, 0.5), 0 0 40px 20px rgba(138, 43, 226, 0.2);
+      background: rgba(138, 43, 226, 0.15); /* Более прозрачный фон */
+      box-shadow: 0 0 30px 15px rgba(138, 43, 226, 0.7), 0 0 60px 30px rgba(138, 43, 226, 0.4), 0 0 90px 45px rgba(138, 43, 226, 0.2);
       opacity: 0;
       transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
       transform: scale(0);
@@ -1128,8 +1129,8 @@
       // Отслеживание движения курсора для глоу-эффекта
       const glow = document.getElementById('glow');
       document.addEventListener('mousemove', (e) => {
-        glow.style.left = `${e.clientX - 50}px`; // Центрируем глоу (50px - половина ширины)
-        glow.style.top = `${e.clientY - 50}px`;  // Центрируем глоу (50px - половина высоты)
+        glow.style.left = `${e.clientX - 75}px`; // Центрируем глоу (75px - половина новой ширины 150px)
+        glow.style.top = `${e.clientY - 75}px`;  // Центрируем глоу (75px - половина новой высоты 150px)
         glow.classList.add('active');
       });
       document.addEventListener('mouseleave', () => {
